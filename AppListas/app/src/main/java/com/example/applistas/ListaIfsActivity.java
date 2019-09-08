@@ -37,11 +37,17 @@ public class ListaIfsActivity extends ListActivity { //extends lista diz que "eu
         //converte para string o item selecionado
         String itemLista = lista.getItemAtPosition(position).toString();
         //mostra uma mensagem com o nome do estado que foi selecionado
-
-
         //Toast.makeText(getApplicationContext(), "O item selecionado foi: " + itemLista, Toast.LENGTH_LONG).show();
+
         //FAZER: abrir uma intenção passando como parâmetro o estado que foi selecionado e mostrar o mapa da sua localidade
+        //coloquei aqui uma intent e lá no manifesto na atividade correta coloquei um filtro
+            Intent ObjectIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0? q=-30.0264276,-51.2233058(IFRS POA)?z=15"));
+            if (ObjectIntent.resolveActivity(getPackageManager()) != null) {
+                startActivity(ObjectIntent);
+            }
     }
+
+    //FAZER como contar os itens da lista sem o cabeçalho e o rodapé? havia 4 itens na  minha lista e foram contados somente 3
 
     //O cabeçalho é configurado com o método montaCabecalho()
     private static TextView montaCabecalho(ListActivity lista){
