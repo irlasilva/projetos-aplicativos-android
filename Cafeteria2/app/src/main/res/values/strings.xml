@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Cafeteria2</string>
+    <string-array name="itens_lista">
+        <item>"Cafés"</item>
+        <item>"Lojas"</item>
+    </string-array>
+    <string-array name="Cardápio">
+        <item>"Café Latte"</item>
+        <item>"Capuccino"</item>
+        <item>"Café Cortado"</item>
+        <item>"Café Pingado"</item>
+    </string-array>
 </resources>
