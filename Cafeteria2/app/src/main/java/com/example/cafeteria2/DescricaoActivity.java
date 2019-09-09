@@ -33,7 +33,7 @@ public class DescricaoActivity extends AppCompatActivity {
         int idImagem = cafes.getIdImagem();
         ImageView img = findViewById(R.id.imgBebida);
         img.setImageResource(cafes.getIdImagem());
-        img.setContentDescription(cafes.getNome()); // caso não consiga mostrar a imagem mostrará um texto
+        img.setContentDescription(cafes.getNome()); //caso não consiga mostrar a imagem mostrará um texto
     }
 }
 
