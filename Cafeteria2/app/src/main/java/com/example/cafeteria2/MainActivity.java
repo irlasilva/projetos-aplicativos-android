@@ -8,27 +8,29 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class MainActivity extends AppCompatActivity {
 
-    private ListView lista;
 
-        @Override
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        lista = findViewById(R.id.menu);
-        //o this informa que a classe atual irá tratar os eventos da lista
-        lista.setOnItemClickListener(this);
+        setContentView(R.layout.activity_main); //o android vai usar esse layout para executar os componentes
+
+        //quando clicar vai fazer o que está abaixo - somente quando clicar
+        AdapterView.OnItemClickListener itemClickListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                if (position == 0) {
+                    Intent intent = new Intent(MainActivity.this, CardapioActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+
+        // um listener para cada lista - criar o laço if nesse caso
+        //quando é botão fazer um listener para cada botão
+        ListView listView = findViewById(R.id.menu);
+        listView.setOnItemClickListener(itemClickListener);
     }
 
-    public void onItemClick(AdapterView<?> a, View v, int position, long id) {
-
-        if (position == 0) {
-            //this = origem, CardapioActivity = destino
-            Intent intent = new Intent(this, CardapioActivity.class);
-            startActivity(intent);
-        }
-        if (position == 1) {
-        }
-    }
 }

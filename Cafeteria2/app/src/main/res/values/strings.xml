@@ -4,10 +4,4 @@
         <item>"Cafés"</item>
         <item>"Lojas"</item>
     </string-array>
-    <string-array name="cardapio">
-        <item>"Café Latte"</item>
-        <item>"Capuccino"</item>
-        <item>"Café Cortado"</item>
-        <item>"Café Pingado"</item>
-    </string-array>
 </resources>
