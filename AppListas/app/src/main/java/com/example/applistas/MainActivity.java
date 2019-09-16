@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             startActivity(intent);
         }
 
-        if (position == 1) {
+        else {
             //Se clicar no item “IFRS Campus POA” abre uma intenção implícita com a localização do campus no mapa
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0? q=-30.0264276,-51.2233058(IFRS POA)?z=15"));
             if (intent.resolveActivity(getPackageManager()) != null) {

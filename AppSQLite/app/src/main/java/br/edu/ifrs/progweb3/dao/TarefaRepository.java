@@ -44,10 +44,10 @@ public class TarefaRepository {
         stringBuilderQuery.append("FROM  TAREFA ");
         stringBuilderQuery.append("ORDER BY NOME");
         //consulta os registros que estão no BD
-        Cursor cursor = bdUtil.getConexao().rawQuery(stringBuilderQuery.toString(), null); //
+        Cursor cursor = bdUtil.getConexao().rawQuery(stringBuilderQuery.toString(), null);
         //aponta cursos para o primeiro registro
         cursor.moveToFirst();
-        Tarefa tarefa = null;
+        Tarefa tarefa = null; //cria o objeto
         //Percorre os registros até atingir o fim da lista de registros
         while (!cursor.isAfterLast()){
             // Cria objetos do tipo tarefa
@@ -57,8 +57,8 @@ public class TarefaRepository {
             tarefa.setNome(cursor.getString(cursor.getColumnIndex("NOME")));
             tarefa.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
             tarefa.setData(cursor.getString(cursor.getColumnIndex("DATA")));
-            //adiciona o objeto na lista
-            tarefas.add(tarefa); //depois adiciona na lista semelhante ao resultSet
+            //adiciona o objeto na lista - adiciona na lista semelhante ao resultSet
+            tarefas.add(tarefa);
             //aponta para o próximo registro
             cursor.moveToNext();
         }
@@ -80,9 +80,9 @@ public class TarefaRepository {
 
     public int update(Tarefa tarefa){
         ContentValues contentValues =  new ContentValues();
-        contentValues.put("NOME",       tarefa.getNome());
-        contentValues.put("DESCRICAO",   tarefa.getDescricao());
-        contentValues.put("DATA",       tarefa.getData());
+        contentValues.put("NOME", tarefa.getNome());
+        contentValues.put("DESCRICAO", tarefa.getDescricao());
+        contentValues.put("DATA", tarefa.getData());
          //atualiza o objeto usando a chave
         int retorno = bdUtil.getConexao().update("TAREFA", contentValues, "_id = ?", new String[]{Integer.toString(tarefa.get_id())});
         bdUtil.close();
