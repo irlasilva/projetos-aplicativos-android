@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         lista.setOnItemClickListener(this);
     }
 
+    //Este método recuperar a posição do elemento selecionado na lista, ou seja, seu índice
     public void onItemClick(AdapterView<?> a, View v, int position, long id) {
 
         if (position == 0) {
