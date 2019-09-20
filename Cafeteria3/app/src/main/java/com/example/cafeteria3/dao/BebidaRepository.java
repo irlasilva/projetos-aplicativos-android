@@ -18,8 +18,8 @@ public class BebidaRepository {
         ContentValues valores = new ContentValues();  //o SQLite precisa de uma area de valores
         valores.put("NOME", nome);
         valores.put("DESCRICAO", descricao);
-        valores.put("DATA", data);
-        long resultado = bdUtil.getConexao().insert("TAREFA", null, valores); //getConexao para conectar com o banco
+        valores.put("PRECO", preco);
+        long resultado = bdUtil.getConexao().insert("BEBIDA", null, valores); //getConexao para conectar com o banco
         if (resultado ==-1) {
             bdUtil.close();
             return "ERRO ao Salvar Registro";
@@ -38,7 +38,7 @@ public class BebidaRepository {
 
         //monta a consulta para listar as bebidas
     StringBuilder stringBuilderQuery = new StringBuilder();
-        stringBuilderQuery.append("SELECT _ID, NOME, DESCRICAO, DATA");
+        stringBuilderQuery.append("SELECT _ID, NOME, DESCRICAO, PRECO");
         stringBuilderQuery.append("FROM BEBIDA");
         stringBuilderQuery.append("ORDER BY NOME");
 
@@ -54,7 +54,7 @@ public class BebidaRepository {
             bebida.set_id(cursor.getInt(cursor.getColumnIndex("_ID")));
             bebida.setNome(cursor.getString(cursor.getColumnIndex("NOME")));
             bebida.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
-            bebida.setData(cursor.getString(cursor.getColumnIndex("DATA")));
+            bebida.setPreco(cursor.getString(cursor.getColumnIndex("PRECO")));
             //adiciona o objeto na lista
             bebidas.add(bebida);
             //aponta para o próximo registro
@@ -73,7 +73,7 @@ public class BebidaRepository {
         t.set_id(cursor.getInt(cursor.getColumnIndex("_ID")));
         t.setNome(cursor.getString(cursor.getColumnIndex("NOME")));
         t.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
-        t.setData(cursor.getString(cursor.getColumnIndex("DATA")));
+        t.setPreco(cursor.getString(cursor.getColumnIndex("PRECO")));
         bdUtil.close();
         return bebida;
     }

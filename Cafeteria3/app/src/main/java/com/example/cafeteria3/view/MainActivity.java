@@ -12,16 +12,15 @@ import com.example.cafeteria3.R;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
+    private ListView opcoesMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //adicionar o Layout que irá usar - arquivo activity_main
-        ListView listaOpcoes = this.findViewById(R.id.menu);
-       // String[] itens = listaOpcoes.get
-        //ArrayAdapter<String> arrayItens = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,itens);
-        //listaOpcoes.setAdapter(arrayItens);
-        listaOpcoes.setOnItemClickListener(this);
+        opcoesMenu = this.findViewById(R.id.menu);
+        opcoesMenu.setOnItemClickListener(this);
     }
 
     //Este método recuperar a posição do elemento selecionado na lista, ou seja, seu índice
