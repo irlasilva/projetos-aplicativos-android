@@ -5,7 +5,11 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 
+import com.example.cafeteria3.model.Bebida;
 import com.example.cafeteria3.util.BDUtil;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class BebidaRepository {
     private BDUtil bdUtil;
@@ -14,7 +18,7 @@ public class BebidaRepository {
         bdUtil =  new BDUtil(context);
     }
 
-    public String insert() {
+    public String insert(String nome, String descricao, String preco) {
         ContentValues valores = new ContentValues();  //o SQLite precisa de uma area de valores
         valores.put("NOME", nome);
         valores.put("DESCRICAO", descricao);
@@ -69,17 +73,23 @@ public class BebidaRepository {
     public Bebida getBebida(int codigo) {
         Cursor cursor = bdUtil.getConexao().rawQuery("SELECT * FROM BEBIDA _ID = "+ codigo, null);
         cursor.moveToFirst();
-        Bebida t = new Bebida();
-        t.set_id(cursor.getInt(cursor.getColumnIndex("_ID")));
-        t.setNome(cursor.getString(cursor.getColumnIndex("NOME")));
-        t.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
-        t.setPreco(cursor.getString(cursor.getColumnIndex("PRECO")));
+        Bebida b = new Bebida();
+        b.set_id(cursor.getInt(cursor.getColumnIndex("_ID")));
+        b.setNome(cursor.getString(cursor.getColumnIndex("NOME")));
+        b.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
+        b.setPreco(cursor.getString(cursor.getColumnIndex("PRECO")));
         bdUtil.close();
-        return bebida;
+        return b;
     }
 
     public int update(Bebida bebida) {
-//parei aqui *************************************************************************!!!!!!!!
+        ContentValues contentValues =  new ContentValues();
+        contentValues.put("NOME", bebida.getNome());
+        contentValues.put("DESCRICAO", bebida.getDescricao());
+        contentValues.put("PRECO", bebida.getPreco());
+        //atualiza o objeto usando a chave
+        int registroUpdate = bdUtil.getConexao().update("BEBIDA", contentValues, "_id = ?", new String[]{Integer.toString(bebida.get_id())});
+        bdUtil.close();
     return registroUpdate;
     }
 }

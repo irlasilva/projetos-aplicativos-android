@@ -5,15 +5,15 @@ public class Bebida {
     private int _id;
     private String nome;
     private String descricao;
-    private String data;
+    private String preco;
 
     public Bebida(){}
 
-    public Bebida(int id, String nome, String descricao, String data) {
+    public Bebida(int id, String nome, String descricao, String preco) {
         this._id = id;
         this.nome = nome;
         this.descricao = descricao;
-        this.data = data;
+        this.preco = preco;
     }
 
         public String getNome() {
@@ -32,12 +32,12 @@ public class Bebida {
             this.descricao = descricao;
         }
 
-        public String getData() {
-            return data;
+        public String getPreco() {
+            return preco;
         }
 
-        public void setData(String data) {
-            this.data = data;
+        public void setPreco(String preco) {
+            this.preco = preco;
         }
 
         public int get_id() {

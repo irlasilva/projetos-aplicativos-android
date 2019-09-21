@@ -17,20 +17,21 @@ public class CadastrarBebidaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar_bebida);
-        Button btn =findViewById(R.id.btnCadastrar);
+        Button btn = findViewById(R.id.btnCadastrar);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BebidaRepository bebidaRepository = new BebidaRepository(getBaseContext());
                 EditText nome = findViewById(R.id.editTextNome);
-                EditText descricao =  findViewById((R.id.editTextDescricao));
-                EditText preco =  findViewById(R.id.editTextPreco);
+                EditText descricao = findViewById((R.id.editTextDescricao));
+                EditText preco = findViewById(R.id.editTextPreco);
                 String resultado = bebidaRepository.insert(nome.getText().toString(), descricao.getText().toString(), preco.getText().toString());
                 Toast.makeText(getApplicationContext(), resultado, Toast.LENGTH_LONG).show();
                 cleanFields();
             }
         });
+    }
 
         private void cleanFields(){
             EditText nome = findViewById(R.id.editTextNome);
@@ -43,4 +44,3 @@ public class CadastrarBebidaActivity extends AppCompatActivity {
 
 
     }
-}
