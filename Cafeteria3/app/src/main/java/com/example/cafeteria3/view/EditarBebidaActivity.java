@@ -17,7 +17,7 @@ import com.example.cafeteria3.dao.BebidaRepository;
 import com.example.cafeteria3.model.Bebida;
 
 public class EditarBebidaActivity extends AppCompatActivity {
-    private int _id=0; //não esquecer o underscore na declaração do id
+    private int _id = 0; //não esquecer o underscore na declaração do id
     EditText editTextNome;
     EditText editTextDescricao;
     EditText editTextPreco; //no código da profe está como private porque??? lá refere-se ao campo data
@@ -29,9 +29,9 @@ public class EditarBebidaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_bebida);
-        editTextNome = this.findViewById(R.id.editTextNomeEdit);
-        editTextDescricao =  this.findViewById(R.id.editTextDescricaoEdit);
-        editTextPreco =  this.findViewById(R.id.editTextPrecoEdit);
+        editTextNome = this.findViewById(R.id.editTextNomeEditar);
+        editTextDescricao =  this.findViewById(R.id.editTextDescricaoEditar);
+        editTextPreco =  this.findViewById(R.id.editTextPrecoEditar);
         btnEditar =  this.findViewById(R.id.btnEditar);
 
         //cria evento para o botão
