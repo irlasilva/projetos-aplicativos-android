@@ -4,6 +4,7 @@ import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.util.Log;
 
 import com.example.cafeteria3.model.Bebida;
 import com.example.cafeteria3.util.BDUtil;
@@ -24,7 +25,7 @@ public class BebidaRepository {
         valores.put("DESCRICAO", descricao);
         valores.put("PRECO", preco);
         long resultado = bdUtil.getConexao().insert("BEBIDA", null, valores); //getConexao para conectar com o banco
-        if (resultado ==-1) {
+        if (resultado == -1) {
             bdUtil.close();
             return "ERRO ao Salvar Registro";
         }
@@ -59,6 +60,7 @@ public class BebidaRepository {
             bebida.setNome(cursor.getString(cursor.getColumnIndex("NOME")));
             bebida.setDescricao(cursor.getString(cursor.getColumnIndex("DESCRICAO")));
             bebida.setPreco(cursor.getString(cursor.getColumnIndex("PRECO")));
+            Log.d("meubanco", bebida.toString());
             //adiciona o objeto na lista
             bebidas.add(bebida);
             //aponta para o próximo registro

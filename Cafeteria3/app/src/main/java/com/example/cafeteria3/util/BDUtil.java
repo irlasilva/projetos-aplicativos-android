@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class BDUtil extends SQLiteOpenHelper {
     private static final String BASE_DE_DADOS = "CAFETERIA3BD";
-    private static final int VERSAO = 1;
+    private static final int VERSAO = 2;
 
     public BDUtil(Context context){
         super(context,BASE_DE_DADOS,null,VERSAO);
@@ -19,7 +19,7 @@ public class BDUtil extends SQLiteOpenHelper {
         criarTabela.append(" _ID   INTEGER PRIMARY KEY AUTOINCREMENT, ");
         criarTabela.append(" NOME  TEXT    NOT NULL,");
         criarTabela.append(" DESCRICAO   TEXT    NOT NULL,");
-        criarTabela.append(" DATA TEXT    NOT NULL)");
+        criarTabela.append(" PRECO TEXT    NOT NULL)");
         db.execSQL(criarTabela.toString());
     }
 

@@ -49,7 +49,7 @@ public class EditarBebidaActivity extends AppCompatActivity {
         _id = extra.getInt("_id");
 
         //Pega o bojeto usando o id
-        Bebida bebida = bebidaRepository.getBebida(_id); //não entendi essa chamada de método???????
+        Bebida bebida = bebidaRepository.getBebida(_id); //busca no banco a bebida que tem a chave primaria que tem como parametro _id
 
         editTextNome.setText(bebida.getNome());
         editTextDescricao.setText(bebida.getDescricao());

@@ -4,4 +4,11 @@
         <item>"Cadastrar"</item>
         <item>"Listar"</item>
     </string-array>
+    <string name="bebida">Nome Bebida</string>
+    <string name="descricao">Descricao</string>
+    <string name="preco">Preço</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="voltar">Voltar</string>
 </resources>

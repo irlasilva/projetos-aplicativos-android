@@ -41,6 +41,4 @@ public class CadastrarBebidaActivity extends AppCompatActivity {
             descricao.setText("");
             preco.setText("");
         }
-
-
-    }
+}
