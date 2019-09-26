@@ -42,9 +42,9 @@ public class BebidaRepository {
         List<Bebida> bebidas = new ArrayList<>();
 
         //monta a consulta para listar as bebidas
-    StringBuilder stringBuilderQuery = new StringBuilder();
-        stringBuilderQuery.append("SELECT _ID, NOME, DESCRICAO, PRECO");
-        stringBuilderQuery.append("FROM BEBIDA");
+        StringBuilder stringBuilderQuery = new StringBuilder();
+        stringBuilderQuery.append("SELECT _ID, NOME, DESCRICAO, PRECO ");
+        stringBuilderQuery.append("FROM BEBIDA ");
         stringBuilderQuery.append("ORDER BY NOME");
 
         Cursor cursor = bdUtil.getConexao().rawQuery(stringBuilderQuery.toString(), null); //consulta os registro do banco
