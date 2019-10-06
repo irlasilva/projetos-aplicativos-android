@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Cafeteria2</string>
+    <string-array name="itensMenu">
+        <item>"Cafés"</item>
+        <item>"Lojas"</item>
+    </string-array>
+</resources>

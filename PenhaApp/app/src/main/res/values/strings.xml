@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PenhaApp</string>
+    <string name="login">Login</string>
+    <string name="ocorrencia">Ocorrência</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="acessoSemCadastro">Acessar sem Cadastro</string>
+    <string name="descricao">Descrição</string>
+    <string name="data">Data</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="voltar">Voltar</string>
+</resources>

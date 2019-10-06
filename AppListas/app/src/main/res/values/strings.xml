@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AppListas</string>
+
+    <string-array name="itens_lista">
+        <item>"Estados"</item>
+        <item>"IFRS Campus POA"</item>
+        <item>"Sobre" </item>
+    </string-array>
+    <string-array name="Ufs">
+        <item>"RS"</item>
+        <item>"MG"</item>
+        <item>"SP"</item>
+        <item>"RJ"</item>
+        <item>"RR"</item>
+        <item>"ES"</item>
+    </string-array>
+
+    <plurals name="textoRodape">
+        <item quantity="one">%d song found.</item>
+        <item quantity="other">%d itens encontrados.</item>
+    </plurals>
+
+</resources>

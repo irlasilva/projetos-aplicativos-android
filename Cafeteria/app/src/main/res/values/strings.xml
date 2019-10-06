@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Cafeteria</string>
+    <string name="lblbebida">Informe a bebida:</string>
+    <string name="btnEnviar">Enviar</string>
+</resources>
