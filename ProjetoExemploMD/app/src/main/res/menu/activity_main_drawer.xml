@@ -5,13 +5,9 @@
 
     <group android:checkableBehavior="single">
         <item
-        android:id="@+id/nav_home"
-        android:icon="@drawable/ic_menu_camera"
-        android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_login"
-            android:icon="@drawable/ic_person"
-            android:title="@string/btnlogin" />
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
@@ -21,21 +17,13 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
         <item
-        android:id="@+id/nav_tools"
-        android:icon="@drawable/ic_menu_manage"
-        android:title="@string/menu_tools" />
-
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/menu_tools" />
         <item
             android:id="@+id/nav_info"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Info" />
-
-        <!-- <activity       ????????????????????******************************* qual usar?
-            android:id="@+id/nav_info"
-            android:name="br.edu.ifrs.projetoexemplomd.ui.activities.InfoActivity"
-            android:label="detalhes"
-            tools:layout="@layout/activity_info" /> -->
-
+            android:icon="@drawable/ic_info"
+            android:title="@string/menu_info" />
     </group>
 
     <item android:title="Communicate">
