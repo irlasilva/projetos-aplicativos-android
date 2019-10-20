@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="br.edu.ifrs.penhaapp3.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="br.edu.ifrs.penhaapp3.ui.list.ListFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_list" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="br.edu.ifrs.penhaapp3.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+
+    <fragment
+        android:id="@+id/nav_tools"
+        android:name="br.edu.ifrs.penhaapp3.ui.tools.ToolsFragment"
+        android:label="@string/menu_tools"
+        tools:layout="@layout/fragment_tools" />
+
+   <!-- <fragment
+        android:id="@+id/nav_info"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.info.InfoFragment"
+        android:label="@string/menu_info"
+        tools:layout="@layout/fragment_info" /> -->
+
+     <activity
+        android:id="@+id/nav_info"
+        android:name="br.edu.ifrs.penhaapp3.ui.activities.InfoActivity"
+        android:label="detalhes"
+        tools:layout="@layout/activity_info" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="br.edu.ifrs.penhaapp3.ui.share.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="br.edu.ifrs.penhaapp3.ui.send.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+
+
+    <fragment
+        android:id="@+id/bottomnavcad"
+        android:name="br.edu.ifrs.penhaapp3.ui.info.CadFragment"
+        android:label="@string/txtAdicionar"
+        tools:layout="@layout/fragment_cad" />
+    <fragment
+        android:id="@+id/bottomnavdel"
+        android:name="br.edu.ifrs.penhaapp3.ui.tools.ToolsFragment"
+        android:label="@string/txtDeletar"
+        tools:layout="@layout/fragment_tools" />
+    <fragment
+        android:id="@+id/bottomnavedit"
+        android:name="br.edu.ifrs.penhaapp3.ui.share.ShareFragment"
+        android:label="@string/txtEditar"
+        tools:layout="@layout/fragment_share" />
+    <fragment
+        android:id="@+id/bottomnavlist"
+        android:name="br.edu.ifrs.penhaapp3.ui.list.ListFragment"
+        android:label="@string/txtListar"
+        tools:layout="@layout/fragment_list" />
+    <fragment
+        android:id="@+id/bottomNavFragmentThree"
+        android:name="br.edu.ifrs.penhaapp3.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+</navigation>
