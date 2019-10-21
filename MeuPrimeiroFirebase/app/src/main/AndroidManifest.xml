@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="br.edu.ifrs.penhaapp3">
+    package="com.irla.meuprimeirofirebase">
 
     <application
         android:allowBackup="true"
@@ -9,19 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-     <!--   <activity android:name=".ui.activities.LoginActivity"></activity> -->
-        <activity android:name="br.edu.ifrs.penhaapp3.ui.activities.MainActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name="br.edu.ifrs.penhaapp3.ui.activities.InfoActivity" />
-
-        <activity
-            android:name="br.edu.ifrs.penhaapp3.ui.activities.LoginActivity"
-            android:label="@string/app_name"
-            >
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

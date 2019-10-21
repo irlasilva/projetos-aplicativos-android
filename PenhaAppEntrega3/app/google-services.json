@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "416923525810",
+    "firebase_url": "https://penhaapp-fd523.firebaseio.com",
+    "project_id": "penhaapp-fd523",
+    "storage_bucket": "penhaapp-fd523.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416923525810:android:46a1f0b85bfb46df5d1fab",
+        "android_client_info": {
+          "package_name": "br.edu.ifrs.penhaapp3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416923525810-e0907ja3erqa3n9pblgjpntuobk7kkfv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.ifrs.penhaapp3",
+            "certificate_hash": "86dc58190a3c9027efaed32472036080c3849456"
+          }
+        },
+        {
+          "client_id": "416923525810-sp8f637m0ica1e4gdde5gvusaa251ich.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnjq3eVZ3FrG3sqD8WREqovrelbwBaMEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416923525810-sp8f637m0ica1e4gdde5gvusaa251ich.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416923525810:android:c0c4b874760d37335d1fab",
+        "android_client_info": {
+          "package_name": "br.edu.ifrs.projetoexemplomd"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416923525810-9uet92haltph4sihdl6tr1rpp6ditf39.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.edu.ifrs.projetoexemplomd",
+            "certificate_hash": "86dc58190a3c9027efaed32472036080c3849456"
+          }
+        },
+        {
+          "client_id": "416923525810-sp8f637m0ica1e4gdde5gvusaa251ich.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnjq3eVZ3FrG3sqD8WREqovrelbwBaMEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416923525810-sp8f637m0ica1e4gdde5gvusaa251ich.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ProjetoExemploMD</string>
+    <string name="app_name">Penha</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
@@ -15,7 +15,9 @@
     <string name="menu_send">Send</string>
     <string name="menu_info">Info</string>
 
-    <string name="btnlogin">Logar</string>
+    <string name="btnLogar">Login</string>
+    <string name="btnCadastrar">Cadastre-se</string>
+    <string name="btnVisitar">Acessar sem Cadastro</string>
     <string name="txtAdicionar">Adicionar</string>
     <string name="txtDeletar">Deletar</string>
     <string name="txtEditar">Editar</string>

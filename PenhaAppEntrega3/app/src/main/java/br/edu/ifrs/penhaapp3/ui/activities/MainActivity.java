@@ -1,4 +1,4 @@
-package br.edu.ifrs.penhaapp3;
+package br.edu.ifrs.penhaapp3.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,18 +11,24 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import br.edu.ifrs.penhaapp3.R;
 
+public class MainActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    private FirebaseUser currentUser;
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -31,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        Button botao = findViewById(R.id.btnBegin);
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -56,11 +61,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(bottomNavigationView,
                 navHostFragment.getNavController());*/
 
-
-    }
-    public void entrarnoAppOnclick(View v) {
-        Intent intencao = new Intent(this, AcessoActivity.class);
-        startActivity(intencao);
     }
 
     @Override
@@ -75,5 +75,20 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        //currentUser = mAuth.getCurrentUser();
+        //para atualizar interface - não necessário agora
+        //updateUI(currentUser);
+
+        //operador ternário ??? apenas quando tem retorno
+        if (currentUser != null)
+            Log.d("LOGIN entrou no sistema", currentUser.getEmail());
+        else
+            Log.d("ERRO", currentUser.getEmail());
     }
 }
