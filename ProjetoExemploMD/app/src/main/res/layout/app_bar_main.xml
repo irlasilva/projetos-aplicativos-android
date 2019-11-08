@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.activities.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -21,9 +21,9 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_main" />
+    <!--area de conteudo do aplicativo posso carregar o fragmento-->
 
-
-    <FrameLayout
+   <!-- <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
@@ -41,8 +41,6 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:menu="@menu/menu" />
-    </FrameLayout>
-
-
+    </FrameLayout>aqui [eh o bottom navigation da home-->
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

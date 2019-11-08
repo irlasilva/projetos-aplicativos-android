@@ -1,27 +1,38 @@
 <resources>
-    <string name="app_name">ProjetoExemploMD</string>
+    <string name="app_name">Entrega3</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_title">Penha App</string>
+    <string name="nav_header_subtitle">Apoio à Mulher</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Logout</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
-    <string name="menu_info">Info</string>
+    <string name="menu_home">Início</string>
+    <string name="menu_categoria">Categorias</string>
+    <string name="menu_dicas">Dicas</string>
+    <string name="menu_telefonesUteis">Telefones Úteis</string>
+    <string name="menu_info">Sobre</string>
+    <string name="btnLogin">Login</string>
+    <string name="loginTitulo">LOGIN</string>
+    <string name="txtEmail">e-mail</string>
+    <string name="txtSenha">Senha</string>
+    <string name="txtConfirmarSenha">Confirme sua senha</string>
+    <string name="txtCadastrar">Cadastre-se aqui</string>
+    <string name="btnVisitar">Acessar sem Cadastro</string>
 
-    <string name="btnlogin">Logar</string>
-    <string name="txtAdicionar">Adicionar</string>
-    <string name="txtDeletar">Deletar</string>
-    <string name="txtEditar">Editar</string>
-    <string name="txtListar">Listar</string>
-    <string name="txtEmail">E-mail</string>
-    <string name="nome">Nome</string>
-    <string name="dtnasc">DtNasc</string>
+    <string name="btnCancelar">CANCELAR</string>
+    <string name="btnSalvar">SALVAR</string>
+    <string name="txtHome">Início</string>
+    <string name="txtCategoria">Categorias</string>
+    <string name="txtConfigurar">Configurações</string>
+
+    <string name="mapa">Mapa</string>
+    <string name="quiz">Quiz</string>
+    <string name="dicas">Dicas</string>
+    <string name="telefones">Telefones</string>
+
+    <string name="nomeLocalTelefone">Local</string>
     <string name="endereco">Endereço</string>
+    <string name="ddd">DDD</string>
+    <string name="numeroTelefone">Telefone</string>
 </resources>

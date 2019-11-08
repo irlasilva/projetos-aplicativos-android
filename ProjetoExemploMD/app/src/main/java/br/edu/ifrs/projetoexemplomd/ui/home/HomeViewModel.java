@@ -13,6 +13,14 @@ public class HomeViewModel extends ViewModel {
         mText.setValue("This is home fragment");
     }
 
+    public void onCardOneClick() {
+
+    }
+
+    public void onCardTwoClick() {
+
+    }
+
     public LiveData<String> getText() {
         return mText;
     }

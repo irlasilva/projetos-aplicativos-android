@@ -12,28 +12,22 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.list.ListFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_list" />
+        android:id="@+id/nav_categoria"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.list.CategoriaListFragment"
+        android:label="@string/menu_categoria"
+        tools:layout="@layout/fragment_home" />
 
-    <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
-
-    <fragment
+    <activity
         android:id="@+id/nav_tools"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
+        android:name="br.edu.ifrs.projetoexemplomd.ui.activities.CadastroUsuarioActivity"
+        android:label="@string/txtCadastrar"
+        tools:layout="@layout/activity_cadastro_usuario" />
 
    <!-- <fragment
         android:id="@+id/nav_info"
         android:name="br.edu.ifrs.projetoexemplomd.ui.info.InfoFragment"
         android:label="@string/menu_info"
-        tools:layout="@layout/fragment_info" /> -->
+        tools:layout="@layout/fragment_info" /> abre só na area. Se for Activity abre uma nova janela-->
 
      <activity
         android:id="@+id/nav_info"
@@ -44,21 +38,22 @@
     <fragment
         android:id="@+id/nav_share"
         android:name="br.edu.ifrs.projetoexemplomd.ui.share.ShareFragment"
-        android:label="@string/menu_share"
+        android:label="@string/menu_dicas"
         tools:layout="@layout/fragment_share" />
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:name="br.edu.ifrs.projetoexemplomd.ui.list.TelefoneFragment"
+        android:label="@string/menu_telefonesUteis"
+        tools:layout="@layout/fragment_list_telefone" />
 
 
-    <fragment
+    <!--<fragment
         android:id="@+id/bottomnavcad"
         android:name="br.edu.ifrs.projetoexemplomd.ui.info.CadFragment"
         android:label="@string/txtAdicionar"
         tools:layout="@layout/fragment_cad" />
+
     <fragment
         android:id="@+id/bottomnavdel"
         android:name="br.edu.ifrs.projetoexemplomd.ui.tools.ToolsFragment"
@@ -71,17 +66,24 @@
         tools:layout="@layout/fragment_share" />
     <fragment
         android:id="@+id/bottomnavlist"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.list.ListFragment"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.list.CategoriaListFragment"
         android:label="@string/txtListar"
         tools:layout="@layout/fragment_list" />
     <fragment
         android:id="@+id/bottomnavemail"
         android:name="br.edu.ifrs.projetoexemplomd.ui.share.ShareFragment"
         android:label="@string/txtEmail"
-        tools:layout="@layout/fragment_list" />
+        tools:layout="@layout/fragment_list" /> -->
     <fragment
-        android:id="@+id/bottomNavFragmentThree"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/bottomnavhome"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.tools.ToolsFragment"
+        android:label="@string/txtHome"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/bottomnavcategoria"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.tools.ToolsFragment"
+        android:label="@string/txtHome"
+        tools:layout="@layout/fragment_tools" />
+
 </navigation>

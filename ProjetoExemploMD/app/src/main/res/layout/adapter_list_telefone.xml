@@ -7,7 +7,7 @@
     android:layout_margin="8dp"
     android:orientation="vertical">
         <TextView
-            android:id="@+id/textViewnomeLocalTelefone"
+            android:id="@+id/nomeLocalTelefone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="4"
@@ -15,19 +15,19 @@
             android:textSize="18sp"
             android:textStyle="bold"/>
         <TextView
-            android:id="@+id/textViewEndereco"
+            android:id="@+id/endereco"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/endereco" />
         <TextView
-            android:id="@+id/textViewdddTelefone"
+            android:id="@+id/dddTelefone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/ddd" />
 
         <TextView
-            android:id="@+id/textViewnumeroTelefone"
+            android:id="@+id/numeroTelefone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/numeroTelefone" />
