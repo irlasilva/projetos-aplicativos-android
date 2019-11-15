@@ -1,4 +1,4 @@
-package br.edu.ifrs.projetoexemplomd.ui.info;
+package br.edu.ifrs.projetoexemplomd.ui.fragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

@@ -2,6 +2,8 @@ package br.edu.ifrs.projetoexemplomd.ui.activities;
 
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
@@ -29,13 +31,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
+import android.widget.Toast;
+
+import java.util.ArrayList;
 
 import br.edu.ifrs.projetoexemplomd.R;
+import br.edu.ifrs.projetoexemplomd.model.Telefone;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private AppBarConfiguration mAppBarConfiguration;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_categoria, R.id.nav_tools, R.id.nav_info, R.id.nav_share, R.id.nav_send)
+                R.id.nav_home, R.id.nav_categoria, R.id.nav_cadastro_dica,
+                R.id.nav_cadastro_usuario, R.id.nav_info, R.id.nav_dica, R.id.nav_phone)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -71,8 +77,6 @@ public class MainActivity extends AppCompatActivity {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
 
-        myRef.setValue("Hello, World!");
-        Log.d("Fim", "Fim main activity Firebase Database aula 13 - Realtime");
     }
 
     @Override
@@ -90,9 +94,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) { //componente superior direito - settings
+        //pega o id do item de menu que foi selecionado e compara com os ids definidos nos
+        //arquivos da pasta menu/maisn.xml
         if (item.getItemId() == R.id.action_settings) {
             FirebaseAuth.getInstance().signOut();
+            Toast.makeText(getApplicationContext(), " Logout Efetuado", Toast.LENGTH_LONG).show();
             finish(); //volta para o login - activity anterior
         }
         return super.onOptionsItemSelected(item);

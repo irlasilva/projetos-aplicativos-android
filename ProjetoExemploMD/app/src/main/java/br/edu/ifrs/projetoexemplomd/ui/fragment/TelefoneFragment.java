@@ -1,4 +1,4 @@
-package br.edu.ifrs.projetoexemplomd.ui.list;
+package br.edu.ifrs.projetoexemplomd.ui.fragment;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,19 +13,12 @@ import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import com.google.android.material.bottomnavigation.BottomNavigationMenu;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import br.edu.ifrs.projetoexemplomd.R;
 import br.edu.ifrs.projetoexemplomd.adapter.AdapterTelefonesEmergencia;
-import br.edu.ifrs.projetoexemplomd.adapter.MyAdapter;
 import br.edu.ifrs.projetoexemplomd.listener.RecyclerItemClickListener;
-import br.edu.ifrs.projetoexemplomd.model.Pessoa;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
 
 // implements BottomNavigationView.OnNavigationItemSelectedListener()

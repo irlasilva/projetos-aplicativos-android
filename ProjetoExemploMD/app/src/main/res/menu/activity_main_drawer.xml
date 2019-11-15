@@ -7,32 +7,36 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="@string/menu_home" />
+            android:title="@string/menu_drawer_home" />
         <item
             android:id="@+id/nav_categoria"
             android:icon="@drawable/ic_categoria"
-            android:title="@string/menu_categoria" />
+            android:title="@string/menu_drawer_categoria" />
         <item
-            android:id="@+id/nav_tools"
+            android:id="@+id/nav_cadastro_usuario"
             android:icon="@drawable/ic_person"
-            android:title="@string/txtCadastrar" />
+            android:title="@string/menu_drawer_cadastrar_usuario" />
+
         <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_dicas"
-            android:title="@string/menu_dicas" />
+            android:id="@+id/nav_phone"
+            android:icon="@drawable/ic_phone"
+            android:title="@string/menu_drawer_telefones_uteis" />
 
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Área Restrita">
         <menu>
+
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_phone"
-                android:title="@string/menu_telefonesUteis" />
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_info"
+            android:title="@string/menu_drawer_info" />
+
             <item
-                android:id="@+id/nav_info"
-                android:icon="@drawable/ic_info"
-                android:title="@string/menu_info" />
+                android:id="@+id/nav_cadastro_dica"
+                android:icon="@drawable/ic_dicas"
+                android:title="@string/menu_drawer_cadastrar_dica" />
+
         </menu>
     </item>
 

@@ -1,4 +1,4 @@
-package br.edu.ifrs.projetoexemplomd.ui.list;
+package br.edu.ifrs.projetoexemplomd.ui.fragment;
 
 import android.os.Bundle;
 import android.util.Log;

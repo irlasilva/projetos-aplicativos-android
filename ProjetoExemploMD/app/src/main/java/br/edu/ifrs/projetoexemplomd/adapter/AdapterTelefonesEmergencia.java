@@ -39,8 +39,6 @@ public class AdapterTelefonesEmergencia extends RecyclerView.Adapter<AdapterTele
         return new MyViewHolder(itemList);//processa enquanto houverem dados na lista até o fim
     }
 
-
-
     @Override
     public void onBindViewHolder(@NonNull AdapterTelefonesEmergencia.MyViewHolder myViewHolder, int i) {
         //exibe os itens no Recycler
@@ -49,7 +47,6 @@ public class AdapterTelefonesEmergencia extends RecyclerView.Adapter<AdapterTele
         Log.d("teste t", t.toString());
         myViewHolder.nomeLocalTelefone.setText(t.getNomeLocalTelefone());
         myViewHolder.endereco.setText(t.getEndereco());
-        myViewHolder.dddTelefone.setText(String.valueOf(t.getDddTelefone()));
         myViewHolder.numeroTelefone.setText(String.valueOf(t.getNumeroTelefone()));
     }
 
@@ -64,7 +61,6 @@ public class AdapterTelefonesEmergencia extends RecyclerView.Adapter<AdapterTele
         //telefone que serão exibidos no recycler
         TextView nomeLocalTelefone;
         TextView endereco;
-        TextView dddTelefone;
         TextView numeroTelefone;
 
         public MyViewHolder(View itemView){
@@ -72,7 +68,6 @@ public class AdapterTelefonesEmergencia extends RecyclerView.Adapter<AdapterTele
             //passa uma referência para os componentes que estão na interface
             nomeLocalTelefone = itemView.findViewById(R.id.nomeLocalTelefone);
             endereco = itemView.findViewById(R.id.endereco);
-            dddTelefone = itemView.findViewById(R.id.dddTelefone);
             numeroTelefone = itemView.findViewById(R.id.numeroTelefone);
         }
     }
