@@ -8,49 +8,37 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="br.edu.ifrs.projetoexemplomd.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_drawer_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_categoria"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.fragment.CategoriaListFragment"
-        android:label="@string/menu_categoria"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_ver_dica"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.dica.DicaFragment"
+        android:label="@string/menu_drawer_ver_dica"
+        tools:layout="@layout/fragment_list_dica" />
 
     <activity
         android:id="@+id/nav_cadastro_usuario"
         android:name="br.edu.ifrs.projetoexemplomd.ui.activities.CadastroUsuarioActivity"
-        android:label="@string/txtCadastrar"
-        tools:layout="@layout/activity_cadastro_usuario" />
+        android:label="@string/txt_header_navigation_cadastro"
+        tools:layout="@layout/activity_cadastrar_usuario" />
 
-     <activity
+    <fragment
+        android:id="@+id/nav_phone"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.telefone.TelefoneFragment"
+        android:label="@string/menu_drawer_telefones_uteis"
+        tools:layout="@layout/fragment_list_telefone" />
+
+    <activity
         android:id="@+id/nav_info"
         android:name="br.edu.ifrs.projetoexemplomd.ui.activities.InfoActivity"
         android:label="detalhes"
         tools:layout="@layout/activity_info" />
 
     <fragment
-        android:id="@+id/nav_dica"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.fragment.DicaFragment"
-        android:label="@string/menu_dicas"
-        tools:layout="@layout/fragment_dica" />
-
-    <fragment
-        android:id="@+id/nav_phone"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.fragment.TelefoneFragment"
-        android:label="@string/menu_telefonesUteis"
-        tools:layout="@layout/fragment_list_telefone" />
-
-    <fragment
-        android:id="@+id/bottomnavhome"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.tools.ToolsFragment"
-        android:label="@string/txtHome"
-        tools:layout="@layout/fragment_tools" />
-
-    <fragment
-        android:id="@+id/bottomnavcategoria"
-        android:name="br.edu.ifrs.projetoexemplomd.ui.tools.ToolsFragment"
-        android:label="@string/txtHome"
-        tools:layout="@layout/fragment_tools" />
+        android:id="@+id/nav_cadastro_dica"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.activities.CadastroDicaActivity"
+        android:label="@string/menu_drawer_cadastrar_dica"
+        tools:layout="@layout/activity_cadastrar_dica" />
 
 </navigation>

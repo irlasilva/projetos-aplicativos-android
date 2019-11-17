@@ -32,8 +32,8 @@ public class AdapterTelefonesEmergencia extends RecyclerView.Adapter<AdapterTele
         //convertendo o XML em uma visualização
         //cria um objeto do tipo view
         View itemList = LayoutInflater.from(viewGroup.getContext()).
-                inflate(R.layout.adapter_list_telefone, viewGroup, false);
-        //se colocar adapter_list usa a lista com separador ou sem separador
+                inflate(R.layout.adapter_list_telefone, viewGroup, false);//posso usar o card aqui
+        //se colocar adapter_list_dica usa a lista com separador ou sem separador
         //o separador fica na classe CategoriaListFragment
         //retorna o itemList que é passado para o construtor da MyViewHolder
         return new MyViewHolder(itemList);//processa enquanto houverem dados na lista até o fim
@@ -43,8 +43,6 @@ public class AdapterTelefonesEmergencia extends RecyclerView.Adapter<AdapterTele
     public void onBindViewHolder(@NonNull AdapterTelefonesEmergencia.MyViewHolder myViewHolder, int i) {
         //exibe os itens no Recycler
         Telefone t = listaTelefones.get(i);
-        Log.d("teste lista telefone",listaTelefones.toString());
-        Log.d("teste t", t.toString());
         myViewHolder.nomeLocalTelefone.setText(t.getNomeLocalTelefone());
         myViewHolder.endereco.setText(t.getEndereco());
         myViewHolder.numeroTelefone.setText(String.valueOf(t.getNumeroTelefone()));
@@ -66,9 +64,9 @@ public class AdapterTelefonesEmergencia extends RecyclerView.Adapter<AdapterTele
         public MyViewHolder(View itemView){
             super(itemView);
             //passa uma referência para os componentes que estão na interface
-            nomeLocalTelefone = itemView.findViewById(R.id.nomeLocalTelefone);
-            endereco = itemView.findViewById(R.id.endereco);
-            numeroTelefone = itemView.findViewById(R.id.numeroTelefone);
+            nomeLocalTelefone = itemView.findViewById(R.id.txt_adapter_list_local_telefone);
+            endereco = itemView.findViewById(R.id.txt_adapter_list_endereco_telefone);
+            numeroTelefone = itemView.findViewById(R.id.txt_adapter_list_numero_telefone);
         }
     }
 }

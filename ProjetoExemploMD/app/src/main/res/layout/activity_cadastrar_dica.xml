@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.fragment.CadastroDicaFragment">
+    tools:context=".ui.activities.CadastroDicaActivity">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_fragment_cadastro_assunto_dica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layout_fragment_cadastro_assunto_dica"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="8dp"
         android:maxLength="20"
         app:counterEnabled="true"
-        app:counterMaxLength="20"
-        >
+        app:counterMaxLength="20">
+
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_fragment_cadastro_assunto_dica"
+            android:id="@+id/txt_activity_cadastro_assunto_dica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -27,36 +27,40 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_activity_cadastro_descricao_dica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/layout_fragment_cadastro_descricao_dica"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         app:counterEnabled="true"
-        app:counterMaxLength="30"
-        >
+        app:counterMaxLength="20">
+
         <EditText
-            android:id="@+id/txt_fragment_cadastro_descricao_dica"
+            android:id="@+id/txt_activity_cadastro_descricao_dica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Descrição"
-            android:gravity="start|top"
             android:layout_margin="20dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="Descrição"
             android:inputType="textMultiLine"
-            android:lines="15" />
+            android:lines="10" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
-
-
     <Button
-        android:id="@+id/btn_cadastro_dica"
+        android:id="@+id/btn_activity_cadastro_dica"
+        style="@style/botao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btnSalvar"
-        style="@style/botao"
         android:layout_gravity="right"
-        />
+        android:text="@string/btn_salvar" />
+
+    <ProgressBar
+        android:id="@+id/cadastrar_dica_loader"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -15,7 +15,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/txtEmail"
+            android:hint="@string/txt_login_cadastar_email"
             android:id="@+id/txtEmail"
             android:inputType="textEmailAddress"/>
     </com.google.android.material.textfield.TextInputLayout>
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtSenha"
-            android:hint="@string/txtSenha"
+            android:hint="@string/txt_login_cadastrar_senha"
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -45,14 +45,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/txtConfirmarSenha"
-            android:hint="@string/txtConfirmarSenha"
+            android:hint="@string/txt_login_cadastrar_confirmar_senha"
             android:inputType="textPassword"/>
     </com.google.android.material.textfield.TextInputLayout>
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnSalvar"
-        android:hint="@string/btnSalvar"/>
+        android:hint="@string/btn_salvar"/>
 
     <ProgressBar
         android:id="@+id/cadastrar_usuario_loader"

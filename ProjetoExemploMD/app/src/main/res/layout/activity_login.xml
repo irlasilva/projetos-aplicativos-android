@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loginTitulo"
+            android:text="@string/login_titulo"
             android:textAlignment="center"
             android:textSize="25sp"
             android:layout_marginBottom="32dp"/>
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:hint="@string/txtEmail"/>
+            android:hint="@string/txt_login_cadastar_email"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -47,27 +47,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="@string/txtSenha"/>
+            android:hint="@string/txt_login_cadastrar_senha"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btnLogar"
+        android:id="@+id/btn_login_acessar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/btnLogin"/>
+        android:hint="@string/txt_btn_login_acessar"/>
 
     <Button
-        android:id="@+id/btnCadastrar"
+        android:id="@+id/btn_login_cadastrar_usuario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/txtCadastrar"/>
+        android:hint="@string/menu_drawer_cadastrar_usuario"/>
 
     <Button
         android:id="@+id/btnVisitar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btnVisitar"
+        android:text="@string/txt_btn_visitar"
         style="@style/botao"/>
 
 </LinearLayout>

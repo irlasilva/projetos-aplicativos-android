@@ -11,8 +11,8 @@
         android:roundIcon="@mipmap/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.DicaActivity"></activity>
-        <activity android:name=".ui.activities.ListActivity" /> <!-- <activity android:name=".ui.activities.LoginActivity"></activity> -->
+        <activity android:name=".ui.activities.ListDicaActivity"></activity>
+        <activity android:name=".ui.activities.ListActivity" />
         <activity
             android:name=".ui.activities.MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -21,7 +21,7 @@
             android:parentActivityName=".ui.activities.MainActivity" />
         <activity
             android:name=".ui.activities.CadastroUsuarioActivity"
-            android:label="@string/txtCadastrar"
+            android:label="@string/txt_header_navigation_cadastro"
             android:parentActivityName=".ui.activities.MainActivity" />
         <activity
             android:name=".ui.activities.LoginActivity"

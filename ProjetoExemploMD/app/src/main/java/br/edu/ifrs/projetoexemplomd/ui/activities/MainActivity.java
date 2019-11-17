@@ -36,11 +36,13 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import br.edu.ifrs.projetoexemplomd.R;
+import br.edu.ifrs.projetoexemplomd.model.Dica;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
 
 public class MainActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private AppBarConfiguration mAppBarConfiguration;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +56,8 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_categoria, R.id.nav_cadastro_dica,
-                R.id.nav_cadastro_usuario, R.id.nav_info, R.id.nav_dica, R.id.nav_phone)
+                R.id.nav_home, R.id.nav_ver_dica, R.id.nav_cadastro_usuario,
+                R.id.nav_phone, R.id.nav_info, R.id.nav_cadastro_dica)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -76,6 +78,9 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
+
+        //metodo para preencher banco
+        //preencheBanco();
 
     }
 
@@ -103,5 +108,14 @@ public class MainActivity extends AppCompatActivity {
             finish(); //volta para o login - activity anterior
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void preencheBanco() {
+
+        FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child("dicas")
+                .setValue(Dica.inicializaListaDicas());
     }
 }

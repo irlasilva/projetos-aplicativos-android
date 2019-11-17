@@ -1,7 +1,6 @@
-package br.edu.ifrs.projetoexemplomd.ui.fragment;
+package br.edu.ifrs.projetoexemplomd.ui.telefone;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +8,8 @@ import android.widget.AdapterView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -55,7 +54,6 @@ public class TelefoneFragment extends Fragment {
         //definindo o layout do rFecycler
         //para os itens ficarem de acordo com o layout escolhido
         recyclerView.setLayoutManager(layoutManager);
-        Log.i("É AQUI MEMO", "teste");
 
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override

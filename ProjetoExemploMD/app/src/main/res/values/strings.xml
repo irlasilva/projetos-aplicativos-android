@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Entrega3</string>
+    <string name="app_name">Penha App</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Penha App</string>
@@ -9,34 +9,35 @@
     <string name="action_settings_info">Sobre</string>
 
     <string name="menu_drawer_home">Início</string>
-    <string name="menu_drawer_categoria">Categorias</string>
     <string name="menu_drawer_ver_dica">Dicas</string>
     <string name="menu_drawer_cadastrar_dica">Cadastrar Dicas</string>
     <string name="menu_drawer_cadastrar_usuario">Cadastre-se aqui</string>
     <string name="menu_drawer_telefones_uteis">Telefones Úteis</string>
     <string name="menu_drawer_info">Sobre</string>
-    <string name="btnLogin">Login</string>
-    <string name="loginTitulo">LOGIN</string>
-    <string name="txtEmail">e-mail</string>
-    <string name="txtSenha">Senha</string>
-    <string name="txtConfirmarSenha">Confirme sua senha</string>
-
-    <string name="txtCadastro">Cadastro</string>
-    <string name="btnVisitar">Acessar sem Cadastro</string>
-
+    <string name="txt_btn_login_acessar">Entrar</string>
+    <string name="login_titulo">LOGIN</string>
+    <string name="txt_login_cadastar_email">e-mail</string>
+    <string name="txt_login_cadastrar_senha">Senha</string>
+    <string name="txt_login_cadastrar_confirmar_senha">Confirme sua senha</string>
+    <string name="txt_header_navigation_cadastro">Cadastrar</string>
+    <string name="txt_btn_visitar">Acessar sem Cadastro</string>
     <string name="btnCancelar">CANCELAR</string>
-    <string name="btnSalvar">SALVAR</string>
-    <string name="txtHome">Início</string>
-    <string name="txtCategoria">Categorias</string>
-    <string name="txtConfigurar">Configurações</string>
+    <string name="btn_salvar">SALVAR</string>
+    <string name="txt_nav_bottom_home">Início</string>
+    <string name="txt_nav_bottom_dica">Dicas</string>
+    <string name="txt_nav_bottom_jogo">Jogar</string>
+    <string name="txt_nav_bottom_configuracoes">Configurações</string>
 
     <string name="mapa">Mapa</string>
     <string name="quiz">Quiz</string>
     <string name="dicas">Dicas</string>
     <string name="telefones">Telefones</string>
 
-    <string name="nomeLocalTelefone">Local</string>
-    <string name="endereco">Endereço</string>
-    <string name="ddd">DDD</string>
-    <string name="numeroTelefone">Telefone</string>
+    <string name="txt_adapter_list_telefone_local">Local</string>
+    <string name="txt_adapter_list_telefone_endereco">Endereço</string>
+    <string name="txt_adapter_list_telefone_ddd">DDD</string>
+    <string name="txt_adapter_list_telefone_numero">Telefone</string>
+    <string name="txt_adapter_assunto_dica">Assunto</string>
+    <string name="txt_adapter_descricao_dica">Descrição</string>
+    <string name="btn_ler">Continuar Lendo</string>
 </resources>

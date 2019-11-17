@@ -57,12 +57,12 @@ public class Dica {
 
     public static List<Dica> inicializaListaDicas(){
         List<Dica> dicas = new ArrayList<>();
-        dicas.add(new Dica("Transporte", "Sempre avise alguém. Sente-se no banco de trás. Ccompatilhe sua localização e informe marca, cor e placa do carro."));
-        dicas.add(    new Dica("Encontro", "Sempre avise alguém. Sé beba líquido das garrafas abertas na hora - garrafas lacradas"));
-        dicas.add(    new Dica("No Trabalho", "Sempre avisem alguém"));
-        dicas.add(    new Dica("Reuniões", "Sempre avisem alguém"));
-        dicas.add(     new Dica("Quando pegarem taxi, uber ou outros aplicativos sozinha", "Sempre avisem alguém"));
-        dicas.add(    new Dica("Quando pegarem taxi, uber ou outros aplicativos sozinha", "Sempre avisem alguém"));
+        dicas.add(new Dica("Transporte", "Sempre avise alguém. Sente-se no banco de trás. Compatilhe sua localização e informe marca, cor e placa do carro."));
+        dicas.add(new Dica("Encontro", "Sempre avise alguém. Sé beba líquido das garrafas abertas na hora - garrafas lacradas"));
+        dicas.add(new Dica("No Trabalho", "Sempre avisem alguém"));
+        dicas.add(new Dica("Reuniões", "Sempre avisem alguém"));
+        dicas.add(new Dica("Quando pegarem taxi sozinha", "Sempre avisem alguém"));
+        dicas.add(new Dica("Quando pegarem uber sozinha", "Sempre avisem alguém"));
         return dicas;
     }
 }

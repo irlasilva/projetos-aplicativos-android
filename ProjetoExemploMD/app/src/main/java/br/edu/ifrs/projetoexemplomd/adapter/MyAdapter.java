@@ -29,7 +29,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> { //
         //cria um objeto do tipo view
         View itemList = LayoutInflater.from(viewGroup.getContext()).
                 inflate(R.layout.adapter_card, viewGroup, false); //troquei o adapter_card (era os cards)
-        //se colocar adapter_list usa a lista com separador ou sem separador
+        //se colocar adapter_list_dica usa a lista com separador ou sem separador
         //o separador fica na classe CategoriaListFragment
         //retorna o itemList que é passado para o construtor da MyViewHolder
         return new MyViewHolder(itemList);//processa enquanto houverem dados na lista de pessoas até o fim

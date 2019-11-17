@@ -51,6 +51,7 @@ public class Telefone {
     public void setNumeroTelefone(String numeroTelefone) {
         this.numeroTelefone = numeroTelefone;
     }
+
     @Override
     public String toString() {
         return "Telefone{" +
@@ -61,13 +62,13 @@ public class Telefone {
                 '}';
     }
 
-    public static List<Telefone> inicializaLista(){
+    public static List<Telefone> inicializaLista() {
         List<Telefone> telefones = new ArrayList<>();
         telefones.add(new Telefone("Delegacia da Mulher", "Porto Alegre - RS", "32882172"));
-        telefones.add(    new Telefone("Central de Atendimento à Mulher", "180"));
-        telefones.add(    new Telefone("Polícia Militar", "190"));
-        telefones.add(    new Telefone("Polícia Civil", "197"));
-        telefones.add(    new Telefone("SAMU", "192"));
+        telefones.add(new Telefone("Central de Atendimento à Mulher", "180"));
+        telefones.add(new Telefone("Polícia Militar", "190"));
+        telefones.add(new Telefone("Polícia Civil", "197"));
+        telefones.add(new Telefone("SAMU", "192"));
         return telefones;
     }
 }

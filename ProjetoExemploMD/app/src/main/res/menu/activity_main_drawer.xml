@@ -9,9 +9,9 @@
             android:icon="@drawable/ic_home"
             android:title="@string/menu_drawer_home" />
         <item
-            android:id="@+id/nav_categoria"
+            android:id="@+id/nav_ver_dica"
             android:icon="@drawable/ic_categoria"
-            android:title="@string/menu_drawer_categoria" />
+            android:title="@string/menu_drawer_ver_dica" />
         <item
             android:id="@+id/nav_cadastro_usuario"
             android:icon="@drawable/ic_person"
@@ -22,16 +22,15 @@
             android:icon="@drawable/ic_phone"
             android:title="@string/menu_drawer_telefones_uteis" />
 
-    </group>
-
-    <item android:title="Área Restrita">
-        <menu>
-
-            <item
+        <item
             android:id="@+id/nav_info"
             android:icon="@drawable/ic_info"
             android:title="@string/menu_drawer_info" />
 
+    </group>
+
+    <item android:title="Área Restrita">
+        <menu>
             <item
                 android:id="@+id/nav_cadastro_dica"
                 android:icon="@drawable/ic_dicas"

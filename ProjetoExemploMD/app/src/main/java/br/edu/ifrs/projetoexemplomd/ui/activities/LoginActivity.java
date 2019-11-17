@@ -39,9 +39,9 @@ public class LoginActivity extends AppCompatActivity {
 
         txtEmail = findViewById(R.id.login_edit_email);
         txtSenha = findViewById(R.id.login_edit_senha);
-        btnLogar = findViewById(R.id.btnLogar);
+        btnLogar = findViewById(R.id.btn_login_acessar);
         btnVisitar = findViewById(R.id.btnVisitar);
-        btnCadastrar = findViewById(R.id.btnCadastrar);
+        btnCadastrar = findViewById(R.id.btn_login_cadastrar_usuario);
         layoutEmail = findViewById(R.id.login_edit_layout_email);
         layoutSenha = findViewById(R.id.login_edit_layout_senha);
         mAuth = FirebaseAuth.getInstance();
