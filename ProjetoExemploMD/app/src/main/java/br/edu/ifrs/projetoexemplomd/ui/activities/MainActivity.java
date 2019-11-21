@@ -41,8 +41,10 @@ import br.edu.ifrs.projetoexemplomd.model.Telefone;
 
 //import NavigationView
 public class MainActivity extends AppCompatActivity {
+
     private FirebaseUser currentUser;
     private AppBarConfiguration mAppBarConfiguration;
+    private NavController navController;
 
 
     @Override
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 .setDrawerLayout(drawer)
                 .build();
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -107,6 +109,8 @@ public class MainActivity extends AppCompatActivity {
             FirebaseAuth.getInstance().signOut();
             Toast.makeText(getApplicationContext(), " Logout Efetuado", Toast.LENGTH_LONG).show();
             finish(); //volta para o login - activity anterior
+        } else if (item.getItemId() == R.id.action_info) {
+            navController.navigate(R.id.nav_info);
         }
         return super.onOptionsItemSelected(item);
     }
