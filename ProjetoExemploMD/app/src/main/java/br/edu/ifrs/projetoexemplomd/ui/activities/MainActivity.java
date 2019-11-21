@@ -40,9 +40,11 @@ import br.edu.ifrs.projetoexemplomd.model.Dica;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
 
 //import NavigationView
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
+
     private FirebaseUser currentUser;
     private AppBarConfiguration mAppBarConfiguration;
+    private NavController navController;
 
 
     @Override
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .setDrawerLayout(drawer)
                 .build();
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
@@ -107,6 +109,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             FirebaseAuth.getInstance().signOut();
             Toast.makeText(getApplicationContext(), " Logout Efetuado", Toast.LENGTH_LONG).show();
             finish(); //volta para o login - activity anterior
+        } else if (item.getItemId() == R.id.action_info) {
+            navController.navigate(R.id.nav_info);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -120,11 +124,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                .setValue(Dica.inicializaListaDicas());
 //    }
 
-    @Override
+   /* @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         if (menuItem.getItemId() == R.id.menu_cadastro_dica) {
             Log.e("","");
         }
         return false;
-    }
+    }*/
 }
