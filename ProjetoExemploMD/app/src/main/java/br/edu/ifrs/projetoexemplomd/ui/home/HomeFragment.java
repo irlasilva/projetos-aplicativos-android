@@ -1,11 +1,13 @@
 package br.edu.ifrs.projetoexemplomd.ui.home;
 
 import android.app.ListActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -15,11 +17,12 @@ import androidx.lifecycle.ViewModelProviders;
 
 import br.edu.ifrs.projetoexemplomd.R;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
-import br.edu.ifrs.projetoexemplomd.ui.activities.InfoActivity;
+import br.edu.ifrs.projetoexemplomd.ui.info.InfoFragment;
+import br.edu.ifrs.projetoexemplomd.ui.telefone.TelefoneFragment;
 
 import static androidx.databinding.DataBindingUtil.inflate;
 
-public class HomeFragment extends Fragment { //está dizendo eu sou um fragmento
+public class HomeFragment extends Fragment { //implements View.OnClickListener{ //está dizendo eu sou um fragmento
 
     private HomeViewModel homeViewModel;
     private TextView card_mapa_text_view;
@@ -32,6 +35,8 @@ public class HomeFragment extends Fragment { //está dizendo eu sou um fragmento
                              ViewGroup container, Bundle savedInstanceState) {
 
         View root = inflate(inflater, R.layout.fragment_home, container, false).getRoot();
+        //Button btnVoltar = root.findViewById(R.id.button_fragment_voltar);
+
 
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
@@ -57,31 +62,30 @@ public class HomeFragment extends Fragment { //está dizendo eu sou um fragmento
         card_mapa_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getActivity(), ListActivity.class));
+                //abrir o mapa com locais específicos
             }
         });
 
         card_quiz_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //chamar qualquer metodo que sera executado
-                startActivity(new Intent(getActivity(), InfoActivity.class));
+                //chamar o InfoFragment
             }
         });
 
         card_dicas_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //chamar qualquer metodo que sera executado
-                startActivity(new Intent(getActivity(), InfoActivity.class));
+                //chamar o Fragment
+
             }
         });
 
         card_telefones_text_view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //chamar qualquer metodo que sera executado
-                startActivity(new Intent(getActivity(), Telefone.class));
+                //chamar o Fragment
+
             }
         });
     }

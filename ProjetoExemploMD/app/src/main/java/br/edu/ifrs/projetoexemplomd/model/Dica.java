@@ -8,6 +8,7 @@ public class Dica {
     private String id;
     private String assuntoDica;
     private String descricaoDica;
+    private String userId;
 
     public Dica() {}
 
@@ -20,6 +21,13 @@ public class Dica {
         this.id = id;
         this.assuntoDica = assuntoDica;
         this.descricaoDica = descricaoDica;
+    }
+
+    public Dica(String id, String assuntoDica, String descricaoDica, String userId) {
+        this.id = id;
+        this.assuntoDica = assuntoDica;
+        this.descricaoDica = descricaoDica;
+        this.userId = userId;
     }
 
     public String getId() {
@@ -43,7 +51,15 @@ public class Dica {
     }
 
     public void setDescricaoDica(String descricaoDica) {
-        descricaoDica = descricaoDica;
+        this.descricaoDica = descricaoDica;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -53,16 +69,5 @@ public class Dica {
                 "assunto='" + assuntoDica + '\'' +
                 ", descricao='" + descricaoDica + '\'' +
                 '}';
-    }
-
-    public static List<Dica> inicializaListaDicas(){
-        List<Dica> dicas = new ArrayList<>();
-        dicas.add(new Dica("Transporte", "Sempre avise alguém. Sente-se no banco de trás. Compatilhe sua localização e informe marca, cor e placa do carro."));
-        dicas.add(new Dica("Encontro", "Sempre avise alguém. Sé beba líquido das garrafas abertas na hora - garrafas lacradas"));
-        dicas.add(new Dica("No Trabalho", "Sempre avisem alguém"));
-        dicas.add(new Dica("Reuniões", "Sempre avisem alguém"));
-        dicas.add(new Dica("Quando pegarem taxi sozinha", "Sempre avisem alguém"));
-        dicas.add(new Dica("Quando pegarem uber sozinha", "Sempre avisem alguém"));
-        return dicas;
     }
 }

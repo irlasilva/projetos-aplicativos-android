@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,9 +33,7 @@ import br.edu.ifrs.projetoexemplomd.dao.SettingsFirebase;
 import br.edu.ifrs.projetoexemplomd.listener.RecyclerItemClickListener;
 import br.edu.ifrs.projetoexemplomd.model.Dica;
 
-// implements BottomNavigationView.OnNavigationItemSelectedListener()
-
-public class DicaFragment extends Fragment {
+public class DicaFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
     //definição da variável que está visível no layout do fragmento
     RecyclerView recyclerView;
 
@@ -77,12 +76,12 @@ public class DicaFragment extends Fragment {
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(getContext(), "Item pressionado com click: " + Dica.inicializaListaDicas().get(position).getAssuntoDica(), Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), "Item pressionado com click: " + Dica.inicializaListaDicas().get(position).getAssuntoDica(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onLongItemClick(View view, int position) {
-                Toast.makeText(getContext(), "Item pressionado com click longo: " + Dica.inicializaListaDicas().get(position).getDescricaoDica(), Toast.LENGTH_LONG).show();
+               // Toast.makeText(getContext(), "Item pressionado com click longo: " + Dica.inicializaListaDicas().get(position).getDescricaoDica(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -115,32 +114,26 @@ public class DicaFragment extends Fragment {
             }
         });
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.bottom_nav_home:
+                //trocar o fragmento
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this).addToBackStack(null).commit();
+                return true;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+            case R.id.bottom_nav_dica:
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.bottom_nav_home:
-                    //trocar o fragmento
-                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this).addToBackStack(null).commit();
-                    return true;
+                return true;
 
-                case R.id.bottom_nav_dica:
+            case R.id.bottom_nav_jogo:
 
-                    return true;
+                return true;
 
-                case R.id.bottom_nav_jogo:
-
-                    return true;
-
-                case R.id.bottom_nav_config:
-
-                    return true;
-            }
-            return false;
+            case R.id.bottom_nav_config:
+                return false;
         }
+return true;
     };
 
 }

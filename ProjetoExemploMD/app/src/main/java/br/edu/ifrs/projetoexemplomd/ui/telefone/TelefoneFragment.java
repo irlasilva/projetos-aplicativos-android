@@ -2,6 +2,7 @@ package br.edu.ifrs.projetoexemplomd.ui.telefone;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -15,19 +16,24 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 import br.edu.ifrs.projetoexemplomd.R;
 import br.edu.ifrs.projetoexemplomd.adapter.AdapterTelefonesEmergencia;
 import br.edu.ifrs.projetoexemplomd.listener.RecyclerItemClickListener;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
+import br.edu.ifrs.projetoexemplomd.ui.dica.DicaFragment;
 
 // implements BottomNavigationView.OnNavigationItemSelectedListener()
 
-public class TelefoneFragment extends Fragment {
+public class TelefoneFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
     //definição da variável que está visível no layout do fragmento
     RecyclerView recyclerView;
+
     public static TelefoneFragment newInstance() {
         return new TelefoneFragment();
     }
+
     //objeto não pode estar nulo
     @Nullable
     @Override
@@ -60,13 +66,13 @@ public class TelefoneFragment extends Fragment {
             public void onItemClick(View view, int position) {
                 //método para quando sofre um click rápido
                 //método que recebe a linha do Recycler que sofreu o click
-                Toast.makeText(getContext(), "Item pressionado com click: "+ Telefone.inicializaLista().get(position).getNomeLocalTelefone(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Item pressionado com click: " + Telefone.inicializaLista().get(position).getNomeLocalTelefone(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onLongItemClick(View view, int position) {
                 //método para quando sofre um click longo
-                Toast.makeText(getContext(), "Item pressionado com click longo: "+ Telefone.inicializaLista().get(position).getNomeLocalTelefone(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Item pressionado com click longo: " + Telefone.inicializaLista().get(position).getNomeLocalTelefone(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -76,4 +82,26 @@ public class TelefoneFragment extends Fragment {
         }));
         return root;
     }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()) {
+            case R.id.bottom_nav_home:
+                //trocar o fragmento
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, TelefoneFragment.this).addToBackStack(null).commit();
+                return true;
+
+            case R.id.bottom_nav_dica:
+
+                return true;
+
+            case R.id.bottom_nav_jogo:
+
+                return true;
+
+            case R.id.bottom_nav_config:
+                return false;
+        }
+        return true;
+    };
 }

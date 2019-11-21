@@ -6,15 +6,22 @@
 
     <TextView
         android:id="@+id/text_info"
-        android:text="Teste com fragmentos e navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
+        android:text="Aplicativo desenvolvido para a disciplina de Programação para Web do curso de
+        Tecnologia Sistemas para Internet do Instituto Federal de Ciência e Tecnologia - IFRS Campus
+        Porto Alegre - RS. Este é um aplicativo de apoio às mulheres para o enfrentamento da
+        violência e de atrevimentos cometidos por homens através da sessão de 'Dicas' e de um jogo
+        que ajuda a mulher a identificar algum tipo de excesso ou transtorno dentro de um relacionamento"
         android:textAlignment="center"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

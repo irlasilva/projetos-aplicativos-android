@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.activities.CadastroDicaActivity">
+    android:orientation="vertical">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/layout_fragment_cadastro_assunto_dica"
@@ -18,7 +17,7 @@
         app:counterMaxLength="20">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txt_activity_cadastro_assunto_dica"
+            android:id="@+id/txt_fragment_cadastro_assunto_dica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -27,7 +26,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_activity_cadastro_descricao_dica"
+        android:id="@+id/layout_fragment_cadastro_descricao_dica"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -36,7 +35,7 @@
         app:counterMaxLength="20">
 
         <EditText
-            android:id="@+id/txt_activity_cadastro_descricao_dica"
+            android:id="@+id/txt_fragment_cadastro_descricao_dica"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
@@ -49,7 +48,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_activity_cadastro_dica"
+        android:id="@+id/btn_fragement_cadastro_dica"
         style="@style/botao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -58,9 +57,9 @@
 
     <ProgressBar
         android:id="@+id/cadastrar_dica_loader"
-        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"/>
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
 
 </androidx.appcompat.widget.LinearLayoutCompat>
