@@ -13,7 +13,7 @@
     <string name="menu_drawer_cadastrar_dica">Cadastrar Dicas</string>
     <string name="menu_drawer_cadastrar_usuario">Cadastre-se aqui</string>
     <string name="menu_drawer_telefones_uteis">Telefones Úteis</string>
-    <string name="menu_drawer_info">Sobre este Aplicativo</string>
+    <string name="menu_drawer_info">Sobre</string>
     <string name="txt_btn_login_acessar">Entrar</string>
     <string name="login_titulo">LOGIN</string>
     <string name="txt_login_cadastar_email">e-mail</string>
