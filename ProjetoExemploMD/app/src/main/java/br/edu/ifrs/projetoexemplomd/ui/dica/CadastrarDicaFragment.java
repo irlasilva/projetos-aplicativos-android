@@ -22,9 +22,9 @@ import java.util.List;
 import br.edu.ifrs.projetoexemplomd.R;
 import br.edu.ifrs.projetoexemplomd.model.Dica;
 
-public class CadastrarDicaFragment extends Fragment{
+public class CadastrarDicaFragment extends Fragment {
 
-    private List<Dica> listDicas ;
+    private List<Dica> listDicas;
     EditText assunto, descricao;
 
     public List<Dica> getListPessoas() {
@@ -35,7 +35,8 @@ public class CadastrarDicaFragment extends Fragment{
         this.listDicas = listDicas;
     }
 
-     public CadastrarDicaFragment(){}
+    public CadastrarDicaFragment() {
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class CadastrarDicaFragment extends Fragment{
         assunto = root.findViewById(R.id.txt_fragment_cadastro_assunto_dica);
         descricao = root.findViewById(R.id.txt_fragment_cadastro_descricao_dica);
 
-        Button btnCad = root.findViewById(R.id.btnSalvar);
+        Button btnCad = root.findViewById(R.id.btn_fragement_cadastro_dica);
         btnCad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,10 +72,10 @@ public class CadastrarDicaFragment extends Fragment{
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getActivity(), "Erro ao cadastrar", Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getActivity(), "Erro ao cadastrar", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 }

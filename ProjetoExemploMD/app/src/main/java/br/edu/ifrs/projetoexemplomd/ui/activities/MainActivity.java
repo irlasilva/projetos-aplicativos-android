@@ -40,7 +40,7 @@ import br.edu.ifrs.projetoexemplomd.model.Dica;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
 
 //import NavigationView
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity {
     private FirebaseUser currentUser;
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -120,11 +120,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 //                .setValue(Dica.inicializaListaDicas());
 //    }
 
-    @Override
+   /* @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         if (menuItem.getItemId() == R.id.menu_cadastro_dica) {
             Log.e("","");
         }
         return false;
-    }
+    }*/
 }

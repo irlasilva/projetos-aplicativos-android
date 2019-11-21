@@ -32,7 +32,7 @@
     <item android:title="Área Restrita">
         <menu>
             <item
-                android:id="@+id/menu_cadastro_dica"
+                android:id="@+id/nav_cadastro_dica"
                 android:icon="@drawable/ic_dicas"
                 android:title="@string/menu_drawer_cadastrar_dica" />
 
