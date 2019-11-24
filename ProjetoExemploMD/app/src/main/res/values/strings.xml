@@ -13,6 +13,7 @@
     <string name="menu_drawer_cadastrar_dica">Cadastrar Dicas</string>
     <string name="menu_drawer_ver_dica">Dicas</string>
     <string name="menu_drawer_cadastrar_usuario">Cadastre-se aqui</string>
+    <string name="menu_drawer_cadastrar_amigo">Cadastrar Amigo</string>
     <string name="menu_drawer_telefones_uteis">Telefones Úteis</string>
     <string name="menu_drawer_oonfig">Configurações</string>
     <string name="menu_drawer_info">Sobre</string>

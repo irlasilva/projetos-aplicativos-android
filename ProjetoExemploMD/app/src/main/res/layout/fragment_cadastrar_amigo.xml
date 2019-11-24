@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:hint="Telefone"
-            android:inputType="textPersonName" />
+            android:inputType="phone" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

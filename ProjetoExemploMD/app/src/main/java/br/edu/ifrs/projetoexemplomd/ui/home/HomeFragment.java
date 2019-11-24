@@ -62,8 +62,7 @@ public class HomeFragment extends Fragment { //implements View.OnClickListener{ 
         card_amigos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //navegar quando tiver a tela
-                Toast.makeText(getContext(), "Clicou em amigos", Toast.LENGTH_SHORT).show();
+               navController.navigate(R.id.nav_cadastrar_amigo);
             }
         });
         card_quiz.setOnClickListener(new View.OnClickListener() {
