@@ -13,6 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,6 +34,7 @@ import br.edu.ifrs.projetoexemplomd.adapter.AdapterDicas;
 import br.edu.ifrs.projetoexemplomd.dao.SettingsFirebase;
 import br.edu.ifrs.projetoexemplomd.listener.RecyclerItemClickListener;
 import br.edu.ifrs.projetoexemplomd.model.Dica;
+import br.edu.ifrs.projetoexemplomd.ui.home.HomeFragment;
 
 public class DicaFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
     //definição da variável que está visível no layout do fragmento
@@ -52,9 +55,9 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
         //configurar o adapter - que formata que o layout de cada item do recycler
 
         //view que representa os botoes da parte de baixo da tela(bottom navigation) para conseguir acessa-lo
-        BottomNavigationView bottomNavigationView = (BottomNavigationView) getActivity().findViewById(R.id.bottomNav);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) root.findViewById(R.id.bottomNav);
         //seta o listener dos botoes. Quando clicar no botao vai acontecer uma acao
-        //bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        bottomNavigationView.setOnNavigationItemSelectedListener(this);
         carregaListDica();
         return root;
     }
@@ -119,32 +122,24 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+
         switch (menuItem.getItemId()) {
             case R.id.bottom_nav_home:
                 //trocar o fragmento
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this)
-                        .addToBackStack(null)
-                        .commit();
+                navController.navigate(R.id.nav_home);
                 return true;
 
             case R.id.bottom_nav_perfil:
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this)
-                        .addToBackStack(null)
-                        .commit();
+                navController.navigate(R.id.nav_perfil);
                 return true;
 
             case R.id.bottom_nav_config:
-                getActivity()
-                        .getSupportFragmentManager()
-                        .beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this)
-                        .addToBackStack(null)
-                        .commit();
+                navController.navigate(R.id.nav_configuracao);
                 return false;
         }
         return true;
-    };
+    }
+
+    ;
 }
