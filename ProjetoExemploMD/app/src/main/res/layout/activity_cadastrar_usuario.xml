@@ -12,7 +12,7 @@
         android:id="@+id/imageView3"
         android:layout_width="190dp"
         android:layout_height="141dp"
-        app:srcCompat="@drawable/ic_person" />
+        app:srcCompat="@drawable/ic_perfil" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -58,7 +58,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/btnSalvar"
-        android:hint="@string/btn_salvar"/>
+        android:hint="@string/btn_salvar"
+        style="@style/botao"/>
 
     <ProgressBar
         android:id="@+id/cadastrar_usuario_loader"

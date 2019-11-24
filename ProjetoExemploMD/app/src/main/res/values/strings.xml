@@ -22,7 +22,7 @@
     <string name="txt_login_cadastar_email">e-mail</string>
     <string name="txt_login_cadastrar_senha">Senha</string>
     <string name="txt_login_cadastrar_confirmar_senha">Confirme sua senha</string>
-    <string name="txt_header_navigation_cadastro">Cadastro</string>
+    <string name="txt_header_navigation_cadastro">Criar Perfil</string>
     <string name="txt_btn_visitar">Acessar sem Cadastro</string>
     <string name="btnCancelar">CANCELAR</string>
     <string name="btn_salvar">SALVAR</string>
