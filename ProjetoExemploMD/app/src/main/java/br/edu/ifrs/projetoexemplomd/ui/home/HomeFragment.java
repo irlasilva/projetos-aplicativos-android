@@ -1,34 +1,32 @@
 package br.edu.ifrs.projetoexemplomd.ui.home;
 
-import android.app.ListActivity;
-import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
-
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import br.edu.ifrs.projetoexemplomd.R;
-import br.edu.ifrs.projetoexemplomd.model.Telefone;
-import br.edu.ifrs.projetoexemplomd.ui.info.InfoFragment;
-import br.edu.ifrs.projetoexemplomd.ui.telefone.TelefoneFragment;
 
 import static androidx.databinding.DataBindingUtil.inflate;
 
 public class HomeFragment extends Fragment { //implements View.OnClickListener{ //está dizendo eu sou um fragmento
 
     private HomeViewModel homeViewModel;
-    private TextView card_mapa_text_view;
-    private TextView card_quiz_text_view;
-    private TextView card_dicas_text_view;
-    private TextView card_telefones_text_view;
+    private CardView card_amigos;
+    private CardView card_quiz;
+    private CardView card_dicas;
+    private CardView card_telefones;
+    private CardView card_mapa;
+
+    private NavController navController;
 
     //método que caracteriza o fragmento onCreateView
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,7 +36,7 @@ public class HomeFragment extends Fragment { //implements View.OnClickListener{ 
         //fazer o card ser clicável e abrir um novo fragment com o item desejada: mapa, jogo, telefones, etc.
         View root = inflate(inflater, R.layout.fragment_home, container, false).getRoot();
         //Button btnVoltar = root.findViewById(R.id.button_fragment_voltar);
-
+        navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
 
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
 
@@ -53,41 +51,44 @@ public class HomeFragment extends Fragment { //implements View.OnClickListener{ 
     }
 
     private void bind(View view) {
-        card_mapa_text_view = view.findViewById(R.id.mapa_text_view);
-        card_quiz_text_view = view.findViewById(R.id.quiz_text_view);
-        card_dicas_text_view = view.findViewById(R.id.dicas_text_view);
-        card_telefones_text_view = view.findViewById(R.id.telefones_text_view);
-
+        card_amigos = view.findViewById(R.id.card_one);
+        card_quiz = view.findViewById(R.id.card_two);
+        card_dicas = view.findViewById(R.id.card_three);
+        card_telefones = view.findViewById(R.id.card_four);
+        card_mapa = view.findViewById(R.id.card_five);
     }
 
-    private void setClick(){
-        card_mapa_text_view.setOnClickListener(new View.OnClickListener() {
+    private void setClick() {
+        card_amigos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //abrir o mapa com locais específicos
+               navController.navigate(R.id.nav_cadastrar_amigo);
             }
         });
-
-        card_quiz_text_view.setOnClickListener(new View.OnClickListener() {
+        card_quiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //chamar o InfoFragment
+                //navegar quando tiver a tela
+                Toast.makeText(getContext(), "Clicou em quiz", Toast.LENGTH_SHORT).show();
             }
         });
-
-        card_dicas_text_view.setOnClickListener(new View.OnClickListener() {
+        card_dicas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //chamar o Fragment
-
+                navController.navigate(R.id.nav_ver_dica);
             }
         });
-
-        card_telefones_text_view.setOnClickListener(new View.OnClickListener() {
+        card_telefones.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //chamar o Fragment
-
+                navController.navigate(R.id.nav_phone);
+            }
+        });
+        card_mapa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //navegar quando tiver a tela
+                Toast.makeText(getContext(), "Clicou em mapa", Toast.LENGTH_SHORT).show();
             }
         });
     }

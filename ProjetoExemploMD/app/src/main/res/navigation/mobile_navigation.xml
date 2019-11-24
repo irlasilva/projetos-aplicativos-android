@@ -53,4 +53,22 @@
         android:label="@string/menu_drawer_politica_privacidade"
         tools:layout="@layout/fragment_privacy_policy" />
 
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.perfil.PerfilFragment"
+        android:label="@string/menu_drawer_perfil"
+        tools:layout="@layout/fragment_perfil" />
+
+    <fragment
+        android:id="@+id/nav_configuracao"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.configuracao.ConfiguracaoFragment"
+        android:label="@string/menu_drawer_perfil"
+        tools:layout="@layout/fragment_configuracao" />
+f
+    <fragment
+        android:id="@+id/nav_cadastrar_amigo"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.amigo.CadastrarAmigoFragment"
+        android:label="@string/menu_drawer_cadastrar_amigo"
+        tools:layout="@layout/fragment_cadastrar_amigo" />
+
 </navigation>
