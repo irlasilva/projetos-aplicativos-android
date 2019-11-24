@@ -13,6 +13,10 @@
             android:icon="@drawable/ic_categoria"
             android:title="@string/menu_drawer_ver_dica" />
         <item
+            android:id="@+id/nav_perfil"
+            android:icon="@drawable/ic_perfil"
+            android:title="@string/menu_drawer_perfil" />
+        <item
             android:id="@+id/nav_cadastro_usuario"
             android:icon="@drawable/ic_person"
             android:title="@string/menu_drawer_cadastrar_usuario" />
@@ -29,14 +33,20 @@
 
     </group>
 
-    <item android:title="Área Restrita">
-        <menu>
-            <item
-                android:id="@+id/nav_cadastro_dica"
-                android:icon="@drawable/ic_dicas"
-                android:title="@string/menu_drawer_cadastrar_dica" />
+    <group
+        android:id="@+id/drawer_nav_area_restrita"
+        android:checkableBehavior="none">
 
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_cadastro_dica"
+            android:icon="@drawable/ic_dicas"
+            android:title="@string/menu_drawer_cadastrar_dica" />
+        <item
+            android:id="@+id/nav_termos_de_uso"
+            android:title="@string/menu_drawer_termos_de_uso" />
+        <item
+            android:id="@+id/nav_politica_privacidade"
+            android:title="@string/menu_drawer_politica_privacidade" />
+    </group>
 
 </menu>

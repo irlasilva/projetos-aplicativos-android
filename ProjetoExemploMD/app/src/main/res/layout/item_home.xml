@@ -31,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/mapa"
+            android:text="@string/card_mapa"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
             android:textColor="@color/colorPrimaryDark"

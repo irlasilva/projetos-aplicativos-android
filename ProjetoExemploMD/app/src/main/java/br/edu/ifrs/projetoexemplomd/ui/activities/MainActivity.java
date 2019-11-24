@@ -38,9 +38,10 @@ import java.util.ArrayList;
 import br.edu.ifrs.projetoexemplomd.R;
 import br.edu.ifrs.projetoexemplomd.model.Dica;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
+import br.edu.ifrs.projetoexemplomd.ui.dica.CadastrarDicaFragment;
 
 //import NavigationView
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CadastrarDicaFragment.FragmentListener {
 
     private FirebaseUser currentUser;
     private AppBarConfiguration mAppBarConfiguration;
@@ -60,7 +61,8 @@ public class MainActivity extends AppCompatActivity {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_ver_dica, R.id.nav_cadastro_usuario,
-                R.id.nav_phone, R.id.nav_info, R.id.nav_cadastro_dica)
+                R.id.nav_phone, R.id.nav_info, R.id.nav_cadastro_dica, R.id.nav_termos_de_uso,
+                R.id.nav_politica_privacidade)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -110,12 +112,17 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), " Logout Efetuado", Toast.LENGTH_LONG).show();
             finish(); //volta para o login - activity anterior
         } else if (item.getItemId() == R.id.action_info) {
-            navController.navigate(R.id.nav_info);
+            navController.navigate(R.id.nav_info); //abre o fragment - InfoFragment
         }
         return super.onOptionsItemSelected(item);
     }
 
-//    public void preencheBanco() {
+    @Override
+    public void voltar() {
+        navController.navigate(R.id.nav_home);
+    }
+
+    //    public void preencheBanco() {
 //
 //        FirebaseDatabase
 //                .getInstance()

@@ -52,7 +52,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
         //configurar o adapter - que formata que o layout de cada item do recycler
 
         //view que representa os botoes da parte de baixo da tela(bottom navigation) para conseguir acessa-lo
-        BottomNavigationView bottomNavigationView = (BottomNavigationView)getActivity().findViewById(R.id.bottomNav);
+        BottomNavigationView bottomNavigationView = (BottomNavigationView) getActivity().findViewById(R.id.bottomNav);
         //seta o listener dos botoes. Quando clicar no botao vai acontecer uma acao
         //bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         carregaListDica();
@@ -81,7 +81,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
 
             @Override
             public void onLongItemClick(View view, int position) {
-               // Toast.makeText(getContext(), "Item pressionado com click longo: " + Dica.inicializaListaDicas().get(position).getDescricaoDica(), Toast.LENGTH_LONG).show();
+                // Toast.makeText(getContext(), "Item pressionado com click longo: " + Dica.inicializaListaDicas().get(position).getDescricaoDica(), Toast.LENGTH_LONG).show();
             }
 
             @Override
@@ -90,6 +90,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
             }
         }));
     }
+
     public void carregaListDica() {
         DatabaseReference reference = SettingsFirebase.getNo("dicas");
         final ArrayList<Dica> listDicas;
@@ -100,7 +101,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
             //é chamado sempre que consegue recuperar algum dado
             //DataSnapshot é o retorno do Firebase => resultado da consulta
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds : dataSnapshot.getChildren()) {
+                for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     //para buscar todos os nós filhos de produtos
                     Dica dica = ds.getValue(Dica.class);
                     dica.setId(ds.getKey());
@@ -108,32 +109,42 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
                 }
                 configuraRecycle(listDicas);
             }
+
             @Override
             //chamado quando a requisição é cancelada
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
     }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.bottom_nav_home:
                 //trocar o fragmento
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this).addToBackStack(null).commit();
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this)
+                        .addToBackStack(null)
+                        .commit();
                 return true;
 
-            case R.id.bottom_nav_dica:
-
-                return true;
-
-            case R.id.bottom_nav_jogo:
-
+            case R.id.bottom_nav_perfil:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this)
+                        .addToBackStack(null)
+                        .commit();
                 return true;
 
             case R.id.bottom_nav_config:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.nav_host_fragment, DicaFragment.this)
+                        .addToBackStack(null)
+                        .commit();
                 return false;
         }
-return true;
+        return true;
     };
-
 }

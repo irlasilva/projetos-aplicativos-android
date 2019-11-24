@@ -16,12 +16,6 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/txt_adapter_list_endereco_telefone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/txt_adapter_list_telefone_endereco" />
-
-    <TextView
         android:id="@+id/txt_adapter_list_numero_telefone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_list">
+
+    <fragment
+        android:id="@+id/nav_cad"
+        android:name="br.edu.ifrs.appexemplo2.ui.cad.CadFragment"
+        android:label="@string/txtAdicionar"
+        tools:layout="@layout/fragment_cad" />
+
+    <fragment
+        android:id="@+id/nav_list"
+        android:name="br.edu.ifrs.appexemplo2.ui.list.ListFragment"
+        android:label="Listar"
+        tools:layout="@layout/fragment_list" />
+
+    <fragment
+        android:id="@+id/nav_info"
+        android:name="br.edu.ifrs.appexemplo2.ui.info.InfoFragment"
+        android:label="@string/menu_info"
+        tools:layout="@layout/fragment_info" />
+
+    <activity
+        android:id="@+id/nav_login"
+        android:name="br.edu.ifrs.appexemplo2.ui.activities.LoginActivity"
+        android:label="@string/menu_login"
+        tools:layout="@layout/activity_login" />
+
+</navigation>

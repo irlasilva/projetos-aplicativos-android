@@ -11,9 +11,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
-        android:text="Aplicativo desenvolvido para a disciplina de Programação para Web do curso de Tecnologia Sistemas para Internet do Instituto Federal de Ciência e Tecnologia - IFRS Campus Porto Alegre - RS. Este é um aplicativo de apoio às mulheres para o enfrentamento da violência e de atrevimentos cometidos por homens através da sessão de 'Dicas' e um jogo que ajuda a mulher a identificar algum tipo de excesso ou transtorno dentro de um relacionamento"
+        android:text="Aplicativo desenvolvido para a disciplina de Programação para Web do curso superior de Tecnologia em Sistemas para Internet do Instituto Federal de Ciência e Tecnologia - IFRS Campus Porto Alegre - RS. \n\n
+        Este é um aplicativo para apoio ao enfrentamento da violência, assédio ou atrevimentos cometidos por homens.\n\n
+        Na sessão de 'Dicas' há algumas sugestões de atitudes que podem ajudar as mulheres em determinadas situações.\n\n Há também a sessão 'Jogo' que, de modo bastante interativo, ajuda a mulher a identificar se está passando por um relacionamento abusivo."
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

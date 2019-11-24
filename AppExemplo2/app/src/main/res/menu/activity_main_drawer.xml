@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cad"
+            android:icon="@drawable/ic_add"
+            android:title="@string/menu_add" />
+
+        <item
+            android:id="@+id/nav_list"
+            android:icon="@drawable/ic_list"
+            android:title="@string/menu_list" />
+    </group>
+
+    <item android:title="Informações">
+        <menu>
+        <item
+            android:id="@+id/nav_info"
+            android:icon="@drawable/ic_info"
+            android:title="@string/menu_info" />
+        </menu>
+    </item>
+
+    <item android:title="Área Restrita">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@drawable/ic_lock"
+                android:title="@string/menu_login" />
+        </menu>
+    </item>
+
+</menu>

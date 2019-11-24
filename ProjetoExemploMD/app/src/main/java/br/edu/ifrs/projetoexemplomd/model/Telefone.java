@@ -4,44 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Telefone {
-    private String id;
-    private String nomeLocalTelefone;
-    private String endereco;
+    private String idTelefone;
+    private String localTelefone;
     private String numeroTelefone;
 
-    public Telefone(String nomeLocalTelefone, String numeroTelefone) {
-        this.nomeLocalTelefone = nomeLocalTelefone;
+    public Telefone(String localTelefone, String numeroTelefone) {
+        this.localTelefone = localTelefone;
         this.numeroTelefone = numeroTelefone;
     }
 
-    public Telefone(String nomeLocalTelefone, String endereco, String numeroTelefone) {
-        this.nomeLocalTelefone = nomeLocalTelefone;
-        this.endereco = endereco;
-        this.numeroTelefone = numeroTelefone;
+    public String getIdTelefone() {
+        return idTelefone;
     }
 
-    public String getNomeLocalTelefone() {
-        return nomeLocalTelefone;
+    public void setIdTelefone(String idTelefone) {
+        this.idTelefone = idTelefone;
     }
 
-    public void setNomeLocalTelefone(String nomeLocalTelefone) {
-        this.nomeLocalTelefone = nomeLocalTelefone;
+    public String getLocalTelefone() {
+        return localTelefone;
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getEndereco() {
-        return endereco;
-    }
-
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setLocalTelefone(String localTelefone) {
+        this.localTelefone = localTelefone;
     }
 
     public String getNumeroTelefone() {
@@ -55,16 +40,15 @@ public class Telefone {
     @Override
     public String toString() {
         return "Telefone{" +
-                "id='" + id + '\'' +
-                "nome='" + nomeLocalTelefone + '\'' +
-                "local='" + endereco + '\'' +
+                "id='" + idTelefone + '\'' +
+                "nome='" + localTelefone + '\'' +
                 ", numero='" + numeroTelefone + '\'' +
                 '}';
     }
 
     public static List<Telefone> inicializaLista() {
         List<Telefone> telefones = new ArrayList<>();
-        telefones.add(new Telefone("Delegacia da Mulher", "Porto Alegre - RS", "32882172"));
+        telefones.add(new Telefone("Delegacia da Mulher - Porto Alegre - RS",  "32882172"));
         telefones.add(new Telefone("Central de Atendimento à Mulher", "180"));
         telefones.add(new Telefone("Polícia Militar", "190"));
         telefones.add(new Telefone("Polícia Civil", "197"));

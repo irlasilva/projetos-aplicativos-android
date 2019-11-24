@@ -19,10 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import br.edu.ifrs.projetoexemplomd.R;
-import br.edu.ifrs.projetoexemplomd.adapter.AdapterTelefonesEmergencia;
+import br.edu.ifrs.projetoexemplomd.adapter.AdapterTelefonesUteis;
 import br.edu.ifrs.projetoexemplomd.listener.RecyclerItemClickListener;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
-import br.edu.ifrs.projetoexemplomd.ui.dica.DicaFragment;
 
 // implements BottomNavigationView.OnNavigationItemSelectedListener()
 
@@ -43,9 +42,9 @@ public class TelefoneFragment extends Fragment implements BottomNavigationView.O
         View root = inflater.inflate(R.layout.fragment_list_telefone, container, false);
         recyclerView = root.findViewById(R.id.recyclerViewTelefone);
         //configurar o adapter - que formata que o layout de cada item do recycler
-        AdapterTelefonesEmergencia adapterTelefonesEmergencia = new AdapterTelefonesEmergencia(Telefone.inicializaLista());
+        AdapterTelefonesUteis adapterTelefonesUteis = new AdapterTelefonesUteis(Telefone.inicializaLista());
         //o recycler vai mostrar esses dados (myAdapter)
-        recyclerView.setAdapter(adapterTelefonesEmergencia);
+        recyclerView.setAdapter(adapterTelefonesUteis);
         //linha de código usada para otimizar o recycler
         recyclerView.setHasFixedSize(true);
 
@@ -66,13 +65,13 @@ public class TelefoneFragment extends Fragment implements BottomNavigationView.O
             public void onItemClick(View view, int position) {
                 //método para quando sofre um click rápido
                 //método que recebe a linha do Recycler que sofreu o click
-                Toast.makeText(getContext(), "Item pressionado com click: " + Telefone.inicializaLista().get(position).getNomeLocalTelefone(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Item pressionado com click: " + Telefone.inicializaLista().get(position).getLocalTelefone(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onLongItemClick(View view, int position) {
                 //método para quando sofre um click longo
-                Toast.makeText(getContext(), "Item pressionado com click longo: " + Telefone.inicializaLista().get(position).getNomeLocalTelefone(), Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "Item pressionado com click longo: " + Telefone.inicializaLista().get(position).getLocalTelefone(), Toast.LENGTH_LONG).show();
             }
 
             @Override

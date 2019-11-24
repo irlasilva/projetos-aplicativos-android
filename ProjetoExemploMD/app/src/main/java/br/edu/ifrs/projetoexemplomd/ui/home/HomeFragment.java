@@ -34,6 +34,8 @@ public class HomeFragment extends Fragment { //implements View.OnClickListener{ 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
+        //alterar o style do card no layout fragment_home
+        //fazer o card ser clicável e abrir um novo fragment com o item desejada: mapa, jogo, telefones, etc.
         View root = inflate(inflater, R.layout.fragment_home, container, false).getRoot();
         //Button btnVoltar = root.findViewById(R.id.button_fragment_voltar);
 
