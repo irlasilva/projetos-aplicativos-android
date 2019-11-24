@@ -87,18 +87,27 @@ public class TelefoneFragment extends Fragment implements BottomNavigationView.O
         switch (menuItem.getItemId()) {
             case R.id.bottom_nav_home:
                 //trocar o fragmento
-                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, TelefoneFragment.this).addToBackStack(null).commit();
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.nav_host_fragment, TelefoneFragment.this)
+                        .addToBackStack(null)
+                        .commit();
                 return true;
 
-            case R.id.bottom_nav_dica:
-
-                return true;
-
-            case R.id.bottom_nav_jogo:
-
+            case R.id.bottom_nav_perfil:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.nav_host_fragment, TelefoneFragment.this)
+                        .addToBackStack(null)
+                        .commit();
                 return true;
 
             case R.id.bottom_nav_config:
+                getActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.nav_host_fragment, TelefoneFragment.this)
+                        .addToBackStack(null)
+                        .commit();
                 return false;
         }
         return true;
