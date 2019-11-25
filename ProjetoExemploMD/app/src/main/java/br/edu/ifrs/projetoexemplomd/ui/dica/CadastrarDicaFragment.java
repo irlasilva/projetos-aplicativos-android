@@ -31,11 +31,11 @@ public class CadastrarDicaFragment extends Fragment {
     private FragmentListener listener;
 
 
-    public List<Dica> getListPessoas() {
+    public List<Dica> getListDicas() {
         return listDicas;
     }
 
-    public void setListDicas(List<Dica> listPessoas) {
+    public void setListDicas(List<Dica> listDicas) {
         this.listDicas = listDicas;
     }
 
@@ -52,7 +52,7 @@ public class CadastrarDicaFragment extends Fragment {
         assunto = root.findViewById(R.id.txt_fragment_cadastro_assunto_dica);
         descricao = root.findViewById(R.id.txt_fragment_cadastro_descricao_dica);
 
-        Button btnCad = root.findViewById(R.id.btn_fragement_cadastro_dica);
+        Button btnCad = root.findViewById(R.id.btn_fragment_cadastro_dica);
         btnCad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

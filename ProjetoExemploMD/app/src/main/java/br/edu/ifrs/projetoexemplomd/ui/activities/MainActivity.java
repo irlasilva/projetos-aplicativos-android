@@ -36,6 +36,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import br.edu.ifrs.projetoexemplomd.R;
+import br.edu.ifrs.projetoexemplomd.model.Amigo;
 import br.edu.ifrs.projetoexemplomd.model.Dica;
 import br.edu.ifrs.projetoexemplomd.model.Telefone;
 import br.edu.ifrs.projetoexemplomd.ui.dica.CadastrarDicaFragment;
@@ -122,14 +123,14 @@ public class MainActivity extends AppCompatActivity implements CadastrarDicaFrag
         navController.navigate(R.id.nav_home);
     }
 
-    //    public void preencheBanco() {
-//
-//        FirebaseDatabase
-//                .getInstance()
-//                .getReference()
-//                .child("dicas")
-//                .setValue(Dica.inicializaListaDicas());
-//    }
+        public void preencheBanco() {
+
+        FirebaseDatabase
+                .getInstance()
+                .getReference()
+                .child("amigos")
+                .setValue(Amigo.inicializaListaAmigos());
+    }
 
    /* @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
