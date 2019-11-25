@@ -1,5 +1,7 @@
 package br.edu.ifrs.projetoexemplomd.ui.dica;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -19,6 +21,8 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -39,6 +43,7 @@ import br.edu.ifrs.projetoexemplomd.ui.home.HomeFragment;
 public class DicaFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
     //definição da variável que está visível no layout do fragmento
     RecyclerView recyclerView;
+    private AdapterDicas adapterDicas;
 
     public static DicaFragment newInstance() {
         return new DicaFragment();
@@ -62,7 +67,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
         return root;
     }
 
-    public void configuraRecycle(List<Dica> dicas) {
+    public void configuraRecycle() {
         AdapterDicas adapterDicas = new AdapterDicas();
         recyclerView.setAdapter(adapterDicas);
         //recyclerView.setHasFixedSize(true);
@@ -83,6 +88,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
             @Override
             public void onLongItemClick(View view, int position) {
                 // Toast.makeText(getContext(), "Item pressionado com click longo: " + Dica.inicializaListaDicas().get(position).getDescricaoDica(), Toast.LENGTH_LONG).show();
+                mostarDialogConfirmacao(adapterDicas.getListaDicas().get(position));
             }
 
             @Override
@@ -102,13 +108,14 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
             //é chamado sempre que consegue recuperar algum dado
             //DataSnapshot é o retorno do Firebase => resultado da consulta
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                ArrayList<Dica> listDicas = new ArrayList<>();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
-                    //para buscar todos os nós filhos de produtos
+                    //para buscar todos os nós filhos de dicas
                     Dica dica = ds.getValue(Dica.class);
                     dica.setId(ds.getKey());
                     listDicas.add(dica);
                 }
-                configuraRecycle(listDicas);
+                adapterDicas.setListaDicas(listDicas);
             }
 
             @Override
@@ -122,20 +129,42 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
 
-        switch (menuItem.getItemId()) {
-            case R.id.bottom_nav_home:
-                //trocar o fragmento
-                navController.navigate(R.id.nav_home);
-                return true;
-
-            case R.id.bottom_nav_perfil:
-                navController.navigate(R.id.nav_perfil);
-                return true;
-
-            case R.id.bottom_nav_config:
-                navController.navigate(R.id.nav_configuracao);
-                return false;
-        }
         return true;
-    };
+    }
+    private void mostarDialogConfirmacao(final Dica dica) {
+        //Cria o gerador do AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        //define o titulo
+        builder.setTitle("Atenção");
+        //define a mensagem
+        builder.setMessage("Tem certeza que deseja excluir a dica " + dica.getAssuntoDica() + "?");
+        //define um botão como positivo
+        builder.setPositiveButton("EXCLUIR", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                deletarDicaNoFirebase(dica);
+            }
+        });
+        //define um botão como negativo.
+        builder.setNegativeButton("CANCELAR", null);
+        //cria e exibe o AlertDialog
+        builder.create().show();
+    }
+
+    private void deletarDicaNoFirebase(Dica dica) {
+        DatabaseReference reference = SettingsFirebase.getNo("dicas").child(dica.getId());
+
+        reference
+                .removeValue()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getContext(), "Dica excluida com sucesso!", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getContext(), "Não foi possível excluir esta dica!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 }

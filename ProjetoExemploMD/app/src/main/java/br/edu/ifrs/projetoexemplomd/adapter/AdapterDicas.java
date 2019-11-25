@@ -18,8 +18,7 @@ public class AdapterDicas extends RecyclerView.Adapter<AdapterDicas.DicaViewHold
 
     private List<Dica> listaDicas = new ArrayList<>();
 
-    public AdapterDicas() {
-    }
+    public AdapterDicas() { }
 
     @NonNull
     @Override
