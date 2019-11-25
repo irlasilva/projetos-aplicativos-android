@@ -16,10 +16,9 @@ import br.edu.ifrs.projetoexemplomd.model.Dica;
 
 public class AdapterDicas extends RecyclerView.Adapter<AdapterDicas.DicaViewHolder> {
 
-    List<Dica> listaDicas = new ArrayList<>();
+    private List<Dica> listaDicas = new ArrayList<>();
 
-    public AdapterDicas(List<Dica> dicas) {
-        this.listaDicas = dicas;
+    public AdapterDicas() {
     }
 
     @NonNull
@@ -41,6 +40,16 @@ public class AdapterDicas extends RecyclerView.Adapter<AdapterDicas.DicaViewHold
     @Override
     public int getItemCount() {
         return listaDicas.size();
+    }
+
+    public List<Dica> getListaDicas() {
+        return listaDicas;
+    }
+
+    public void setListaDicas(List<Dica> dicaList) {
+        this.listaDicas.clear();
+        this.listaDicas.addAll(dicaList);
+        this.notifyDataSetChanged();
     }
 
     public class DicaViewHolder extends RecyclerView.ViewHolder {
