@@ -68,7 +68,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
     }
 
     public void configuraRecycle() {
-        AdapterDicas adapterDicas = new AdapterDicas();
+        final AdapterDicas adapterDicas = new AdapterDicas();
         recyclerView.setAdapter(adapterDicas);
         //recyclerView.setHasFixedSize(true);
         //configurar o gerenciador de layout - podem ser tres tipos (os outros dois estao comentados
