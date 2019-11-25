@@ -63,12 +63,13 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
         BottomNavigationView bottomNavigationView = (BottomNavigationView) root.findViewById(R.id.bottomNav);
         //seta o listener dos botoes. Quando clicar no botao vai acontecer uma acao
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
+        configuraRecycle();
         carregaListDica();
         return root;
     }
 
     public void configuraRecycle() {
-        final AdapterDicas adapterDicas = new AdapterDicas();
+        adapterDicas = new AdapterDicas();
         recyclerView.setAdapter(adapterDicas);
         //recyclerView.setHasFixedSize(true);
         //configurar o gerenciador de layout - podem ser tres tipos (os outros dois estao comentados
@@ -131,6 +132,7 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
 
         return true;
     }
+
     private void mostarDialogConfirmacao(final Dica dica) {
         //Cria o gerador do AlertDialog
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
