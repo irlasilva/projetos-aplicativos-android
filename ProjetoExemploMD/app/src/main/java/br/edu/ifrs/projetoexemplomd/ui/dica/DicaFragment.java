@@ -66,17 +66,15 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
         AdapterDicas adapterDicas = new AdapterDicas(dicas);
         recyclerView.setAdapter(adapterDicas);
         //recyclerView.setHasFixedSize(true);
-
         //configurar o gerenciador de layout - podem ser tres tipos (os outros dois estao comentados
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
         //StaggeredGridLayoutManager layoutManager = new StaggeredGridLayoutManager(1, LinearLayoutManager.VERTICAL); //vertical - se adapta ao conteúdo
         //GridLayoutManager layoutManager = new GridLayoutManager(getContext(), 2);
-
         //separador entre os itens
         recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayout.VERTICAL));
         recyclerView.setLayoutManager(layoutManager);
-
         recyclerView.addOnItemTouchListener(new RecyclerItemClickListener(getContext(), recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+
             @Override
             public void onItemClick(View view, int position) {
                 //Toast.makeText(getContext(), "Item pressionado com click: " + Dica.inicializaListaDicas().get(position).getAssuntoDica(), Toast.LENGTH_LONG).show();
@@ -139,7 +137,5 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
                 return false;
         }
         return true;
-    }
-
-    ;
+    };
 }

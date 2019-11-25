@@ -12,9 +12,9 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_ver_dica"
+        android:id="@+id/nav_ver_dicas"
         android:name="br.edu.ifrs.projetoexemplomd.ui.dica.DicaFragment"
-        android:label="@string/menu_drawer_ver_dica"
+        android:label="@string/menu_drawer_ver_dicas"
         tools:layout="@layout/fragment_list_dica" />
 
     <activity
@@ -64,11 +64,17 @@
         android:name="br.edu.ifrs.projetoexemplomd.ui.configuracao.ConfiguracaoFragment"
         android:label="@string/menu_drawer_perfil"
         tools:layout="@layout/fragment_configuracao" />
-f
+
     <fragment
         android:id="@+id/nav_cadastrar_amigo"
         android:name="br.edu.ifrs.projetoexemplomd.ui.amigo.CadastrarAmigoFragment"
         android:label="@string/menu_drawer_cadastrar_amigo"
         tools:layout="@layout/fragment_cadastrar_amigo" />
+
+    <fragment
+        android:id="@+id/nav_listar_amigos"
+        android:name="br.edu.ifrs.projetoexemplomd.ui.amigo.AmigoListFragment"
+        android:label="@string/menu_drawer_ver_amigos"
+        tools:layout="@layout/fragment_list_amigo" />
 
 </navigation>

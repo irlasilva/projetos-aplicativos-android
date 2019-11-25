@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements CadastrarDicaFrag
         DatabaseReference myRef = database.getReference("message");
 
         //metodo para preencher banco
-        //preencheBanco();
+        preencheBanco();
 
     }
 
@@ -132,11 +132,4 @@ public class MainActivity extends AppCompatActivity implements CadastrarDicaFrag
                 .setValue(Amigo.inicializaListaAmigos());
     }
 
-   /* @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        if (menuItem.getItemId() == R.id.menu_cadastro_dica) {
-            Log.e("","");
-        }
-        return false;
-    }*/
 }

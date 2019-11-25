@@ -5,10 +5,8 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewAmigo"
         android:layout_width="match_parent"
         android:layout_height="600dp" />
-
-    <include layout="@layout/action_bar_bottom_navigation" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
