@@ -24,6 +24,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -42,8 +43,10 @@ import br.edu.ifrs.projetoexemplomd.ui.home.HomeFragment;
 
 public class DicaFragment extends Fragment implements BottomNavigationView.OnNavigationItemSelectedListener {
     //definição da variável que está visível no layout do fragmento
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
     private AdapterDicas adapterDicas;
+    private FloatingActionButton fabDica;
+    private NavController navController;
 
     public static DicaFragment newInstance() {
         return new DicaFragment();
@@ -88,7 +91,6 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
 
             @Override
             public void onLongItemClick(View view, int position) {
-                // Toast.makeText(getContext(), "Item pressionado com click longo: " + Dica.inicializaListaDicas().get(position).getDescricaoDica(), Toast.LENGTH_LONG).show();
                 mostarDialogConfirmacao(adapterDicas.getListaDicas().get(position));
             }
 
@@ -124,13 +126,6 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
             public void onCancelled(@NonNull DatabaseError databaseError) {
             }
         });
-    }
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
-
-        return true;
     }
 
     private void mostarDialogConfirmacao(final Dica dica) {
@@ -169,4 +164,24 @@ public class DicaFragment extends Fragment implements BottomNavigationView.OnNav
             }
         });
     }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+
+        switch (menuItem.getItemId()) {
+            case R.id.bottom_nav_home:
+                //trocar o fragmento
+                navController.navigate(R.id.nav_home);
+                return true;
+
+            case R.id.bottom_nav_perfil:
+                navController.navigate(R.id.nav_perfil);
+                return true;
+
+            case R.id.bottom_nav_config:
+                navController.navigate(R.id.nav_configuracao);
+                return false;
+        }
+        return true;
+    };
 }

@@ -1,5 +1,7 @@
 package br.edu.ifrs.projetoexemplomd.ui.amigo;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,11 +13,16 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,8 +39,11 @@ import br.edu.ifrs.projetoexemplomd.model.Amigo;
 import br.edu.ifrs.projetoexemplomd.model.Dica;
 
 public class AmigoListFragment extends Fragment {
-    //definição da variável que está visível no layout do fragmento
-    RecyclerView recyclerView;
+
+    private RecyclerView recyclerView;
+    private AdapterAmigos adapterAmigos;
+    private FloatingActionButton fabAmigo;
+    private NavController navController;
 
     public static AmigoListFragment newInstance() {
         return new AmigoListFragment();
@@ -47,12 +57,16 @@ public class AmigoListFragment extends Fragment {
         //carrega o fragmento_list e associa com a variável root
         View root = inflater.inflate(R.layout.fragment_list_amigo, container, false);
         recyclerView = root.findViewById(R.id.recyclerViewAmigo);
+        fabAmigo = root.findViewById(R.id.fab_amigo);
+        navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
+        onFabClickListener();
+        configuraRecycle();
         carregaListAmigos();
         return root;
     }
 
-    public void configuraRecycle(List<Amigo> amigos) {
-        AdapterAmigos adapterAmigos = new AdapterAmigos(Amigo.inicializaListaAmigos());
+    public void configuraRecycle() {
+        adapterAmigos = new AdapterAmigos();
         recyclerView.setAdapter(adapterAmigos);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -61,12 +75,11 @@ public class AmigoListFragment extends Fragment {
 
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(getContext(), "Item pressionado com click: " + Amigo.inicializaListaAmigos().get(position).getNomeAmigo(), Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onLongItemClick(View view, int position) {
-                Toast.makeText(getContext(), "Item pressionado com click longo: " + Amigo.inicializaListaAmigos().get(position).getNomeAmigo(), Toast.LENGTH_LONG).show();
+                mostarDialogConfirmacao(adapterAmigos.getListaAmigos().get(position));
             }
 
             @Override
@@ -92,12 +105,59 @@ public class AmigoListFragment extends Fragment {
                     amigo.setIdAmigo(ds.getKey());
                     listAmigos.add(amigo);
                 }
-                configuraRecycle(listAmigos);
+                //adapter apenas seta nova lista de dados trazidos do banco
+                adapterAmigos.setListaDicas(listAmigos);
             }
 
             @Override
             //chamado quando a requisição é cancelada
             public void onCancelled(@NonNull DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void mostarDialogConfirmacao(final Amigo amigo) {
+        //Cria o gerador do AlertDialog
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        //define o titulo
+        builder.setTitle("Atenção");
+        //define a mensagem
+        builder.setMessage("Tem certeza que deseja excluir " + amigo.getNomeAmigo() + "?");
+        //define um botão como positivo
+        builder.setPositiveButton("EXCLUIR", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface arg0, int arg1) {
+                deletarAmigoNoFirebase(amigo);
+            }
+        });
+        //define um botão como negativo.
+        builder.setNegativeButton("CANCELAR", null);
+        //cria e exibe o AlertDialog
+        builder.create().show();
+    }
+
+    private void deletarAmigoNoFirebase(Amigo amigo) {
+        DatabaseReference reference = SettingsFirebase.getNo("amigos").child(amigo.getIdAmigo());
+
+        reference
+                .removeValue()
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(getContext(), "Amigo excluído", Toast.LENGTH_SHORT).show();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(getContext(), "Não foi possível excluir", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    public void onFabClickListener() {
+        fabAmigo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.nav_cadastrar_amigo);
             }
         });
     }

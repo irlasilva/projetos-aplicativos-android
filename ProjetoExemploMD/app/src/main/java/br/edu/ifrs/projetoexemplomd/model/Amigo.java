@@ -38,14 +38,4 @@ public class Amigo {
     public void setTelefoneAmigo(String telefoneAmigo) {
         this.telefoneAmigo = telefoneAmigo;
     }
-
-    public static List<Amigo> inicializaListaAmigos(){
-        List<Amigo> amigos = new ArrayList<>();
-        amigos.add(new Amigo("Silvia", "3222-2909"));
-        amigos.add(new Amigo("Maria", "3222-2908"));
-        amigos.add(new Amigo("José", "3222-2907"));
-        amigos.add(new Amigo("Joaquim","3222-2906"));
-        amigos.add(new Amigo("Bruna","3222-2905"));
-        return amigos;
-    }
 }

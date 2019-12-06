@@ -15,11 +15,9 @@ import br.edu.ifrs.projetoexemplomd.R;
 import br.edu.ifrs.projetoexemplomd.model.Amigo;
 
 public class AdapterAmigos extends RecyclerView.Adapter<AdapterAmigos.AmigoViewHolder> { //dentro de uma classe ha uma outra classe MyAdapter.MyViewHolder
-    List<Amigo> listaAmigos = new ArrayList<>(); //inicializar a lista
+    private List<Amigo> listaAmigos = new ArrayList<>(); //inicializar a lista
 
-    public AdapterAmigos(List<Amigo> amigos) {
-        this.listaAmigos = amigos;
-    } //garantir que a lista será criada fica dentro do contrutor
+    public AdapterAmigos() {}
 
     @NonNull
     @Override
@@ -31,12 +29,11 @@ public class AdapterAmigos extends RecyclerView.Adapter<AdapterAmigos.AmigoViewH
                 inflate(R.layout.item_card_amigo, viewGroup, false); //troquei o adapter_card (era os cards)
         //se colocar adapter_list_dica usa a lista com separador ou sem separador
         //o separador fica na classe AmigoListFragment
-        //retorna o itemList que é passado para o construtor da MyViewHolder
+        //retorna o itemList que é passado para o construtor da ViewHolder
         return new AmigoViewHolder(itemList);//processa enquanto houverem dados na lista de pessoas até o fim
     }
 
     @Override
-    //método que ??? ouvir audio em 30'
     public void onBindViewHolder(@NonNull AdapterAmigos.AmigoViewHolder amigoViewHolder, int i) {
         //exibe os itens no Recycler
         Amigo a = listaAmigos.get(i);
@@ -50,7 +47,15 @@ public class AdapterAmigos extends RecyclerView.Adapter<AdapterAmigos.AmigoViewH
         //retorna a quantidade de itens que será exibida
         return listaAmigos.size();
     }
+    public List<Amigo> getListaAmigos() {
+        return listaAmigos;
+    }
 
+    public void setListaDicas(List<Amigo> amigosList) {
+        this.listaAmigos.clear();
+        this.listaAmigos.addAll(amigosList);
+        this.notifyDataSetChanged();
+    }
     public class AmigoViewHolder extends RecyclerView.ViewHolder{ //classe interna do adaptador
         //dados da pessoa que serão exibidos no recycler
         TextView nomeAmigo;

@@ -1,5 +1,7 @@
 package br.edu.ifrs.projetoexemplomd.ui.home;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +27,6 @@ public class HomeFragment extends Fragment { //implements View.OnClickListener{ 
     private CardView card_dicas;
     private CardView card_telefones;
     private CardView card_mapa;
-
     private NavController navController;
 
     //método que caracteriza o fragmento onCreateView
@@ -87,8 +88,8 @@ public class HomeFragment extends Fragment { //implements View.OnClickListener{ 
         card_mapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //navegar quando tiver a tela
-                Toast.makeText(getContext(), "Clicou em mapa", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0? q=-30.0264276,-51.2233058(IFRS POA)?z=15"));
+                    startActivity(intent);
             }
         });
     }

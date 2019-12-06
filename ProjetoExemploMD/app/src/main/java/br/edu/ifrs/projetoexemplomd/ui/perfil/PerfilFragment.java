@@ -60,10 +60,9 @@ public class PerfilFragment extends Fragment implements BottomNavigationView.OnN
 
             case R.id.bottom_nav_config:
                 navController.navigate(R.id.nav_configuracao);
-                return false;
+                return true;
         }
-        return true;
-    }
 
-    ;
+        return true;
+    };
 }

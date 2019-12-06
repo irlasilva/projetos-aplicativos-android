@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -23,11 +25,14 @@ import br.edu.ifrs.projetoexemplomd.R;
 import br.edu.ifrs.projetoexemplomd.model.Amigo;
 import br.edu.ifrs.projetoexemplomd.model.Dica;
 
+import static br.edu.ifrs.projetoexemplomd.util.Util.hideKeyboard;
+import static br.edu.ifrs.projetoexemplomd.util.Util.hideKeyboardFrom;
+
 public class CadastrarAmigoFragment extends Fragment {
 
     private List<Amigo> listAmigos;
     EditText nomeAmigo, telefoneAmigo;
-    private FragmentListener listener;
+    private NavController navController;
 
     public List<Amigo> getListAmigos() {
         return listAmigos;
@@ -40,7 +45,6 @@ public class CadastrarAmigoFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        this.listener = (CadastrarAmigoFragment.FragmentListener) context;
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -49,6 +53,7 @@ public class CadastrarAmigoFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_cadastrar_amigo, container, false);
         nomeAmigo = root.findViewById(R.id.txt_fragment_cadastro_nome_amigo);
         telefoneAmigo = root.findViewById(R.id.txt_fragment_cadastro_telefone_amigo);
+        navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment);
 
         Button btnCad = root.findViewById(R.id.btn_fragment_cadastro_amigo);
         btnCad.setOnClickListener(new View.OnClickListener() {
@@ -85,7 +90,10 @@ public class CadastrarAmigoFragment extends Fragment {
                 Toast.makeText(getContext(), "Great Success \\o/", Toast.LENGTH_SHORT).show();
                 nomeAmigo.setText("");
                 telefoneAmigo.setText("");
-                listener.voltar();
+                //fechar o teclado
+                hideKeyboardFrom(getActivity(), getView().getRootView());
+                //voltar para a home onde tem os cards
+                navController.navigate(R.id.nav_home);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -93,10 +101,5 @@ public class CadastrarAmigoFragment extends Fragment {
                 Toast.makeText(getActivity(), "Erro ao cadastrar amigo", Toast.LENGTH_SHORT).show();
             }
         });
-        ;
-    }
-
-    public static interface FragmentListener {
-        void voltar();
     }
 }

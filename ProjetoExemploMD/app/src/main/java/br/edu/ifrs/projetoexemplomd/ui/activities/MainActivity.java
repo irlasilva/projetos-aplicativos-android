@@ -84,10 +84,6 @@ public class MainActivity extends AppCompatActivity implements CadastrarDicaFrag
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("message");
-
-        //metodo para preencher banco
-        preencheBanco();
-
     }
 
     @Override
@@ -122,14 +118,4 @@ public class MainActivity extends AppCompatActivity implements CadastrarDicaFrag
     public void voltar() {
         navController.navigate(R.id.nav_home);
     }
-
-        public void preencheBanco() {
-
-        FirebaseDatabase
-                .getInstance()
-                .getReference()
-                .child("amigos")
-                .setValue(Amigo.inicializaListaAmigos());
-    }
-
 }
